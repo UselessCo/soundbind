@@ -1,0 +1,40 @@
+{
+  "name": "soundbind",
+  "version": "1.0.0",
+  "description": "SoundBind is a lightweight, open-source CLI tool built with Node.js that lets you map keyboard keys to custom sound files. Perfect for soundboards, audio triggers, live setups, or just for fun.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "build": "echo 'No build needed for Node.js package'",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "soundbind",
+    "audio",
+    "keybind",
+    "hotkeys",
+    "gaming",
+    "streaming",
+    "cli"
+  ],
+  "dependencies": {
+    "chalk": "^5.6.2"
+  },
+  "devDependencies": {
+    "jest": "^30.1.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UselessCo/soundbind.git"
+  },
+  "license": "MIT"
+}
