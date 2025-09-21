@@ -4,8 +4,13 @@
   "description": "SoundBind is a lightweight, open-source CLI tool built with Node.js that lets you map keyboard keys to custom sound files. Perfect for soundboards, audio triggers, live setups, or just for fun.",
   "main": "index.js",
   "type": "module",
+  "bin": {
+    "soundbind": "./bin/soundbind"
+  },
   "scripts": {
+    "start": "node index.js",
     "test": "jest",
+    "dev": "nodemon index.js ./src/configs/default.yaml",
     "build": "echo 'No build needed for Node.js package'",
     "prepublishOnly": "npm test"
   },
