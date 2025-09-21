@@ -1,0 +1,228 @@
+# =============================================================================
+# SOUNDBOARD KEYBIND CONFIGURATION TEMPLATE
+# =============================================================================
+# Only includes features that are currently implemented
+
+# =============================================================================
+# PROFILE INFORMATION (Optional - for documentation)
+# =============================================================================
+profile:
+  name: "My Soundbind Setup"
+  description: "Custom soundbind configuration"
+  version: "1.0.0"
+
+# =============================================================================
+# AUDIO SYSTEM CONFIGURATION
+# =============================================================================
+audio:
+  # Output device (uses system default)
+  outputDevice: "default"
+  
+  # Audio player (recommended for Linux with SoX installed)
+  player: "play"                          # SoX player
+  # player: "paplay"                      # PulseAudio (Linux alternative)
+  # player: "mpg123"                      # Good for MP3 files
+  # player: "mplayer"                     # Cross-platform alternative
+  
+  # Maximum number of sounds playing simultaneously
+  maxConcurrent: 5
+  
+  # Global volume multiplier (0.0 to 1.0)
+  masterVolume: 1.0
+
+# =============================================================================
+# KEYBIND MAPPINGS
+# =============================================================================
+keybinds:
+  # -------------------------------------------------------------------------
+  # FUNCTION KEYS
+  # -------------------------------------------------------------------------
+  - key: "F1"
+    sound: "./assets/sounds/victory.mp3"
+    volume: 0.8
+    description: "Victory sound"
+    
+  - key: "F2"
+    sound: "./assets/sounds/explosion.wav"
+    volume: 1.0
+    description: "Explosion effect"
+    
+  - key: "F3"
+    sound: "./assets/sounds/laser.wav"
+    volume: 0.7
+    description: "Laser blast"
+    
+  - key: "F4"
+    sound: "./assets/sounds/notification.ogg"
+    volume: 0.6
+    description: "Alert notification"
+    
+  - key: "F5"
+    sound: "./assets/sounds/epic-theme.mp3"
+    volume: 0.5
+    loop: true                            # Loop continuously (IMPLEMENTED)
+    stopOthers: true                      # Stop other sounds first (IMPLEMENTED)
+    description: "Epic background music"
+    
+  - key: "F6"
+    sound: "./assets/sounds/ambience.wav"
+    volume: 0.3
+    loop: true
+    description: "Background ambience"
+
+  # -------------------------------------------------------------------------
+  # NUMPAD KEYS
+  # -------------------------------------------------------------------------
+  - key: "numpad1"
+    sound: "./assets/sounds/coin.wav"
+    volume: 0.6
+    description: "Coin pickup"
+    
+  - key: "numpad2"
+    sound: "./assets/sounds/power-up.wav"
+    volume: 0.7
+    description: "Power up sound"
+    
+  - key: "numpad3"
+    sound: "./assets/sounds/jump.wav"
+    volume: 0.8
+    description: "Jump sound"
+
+  # -------------------------------------------------------------------------
+  # LETTER KEYS
+  # -------------------------------------------------------------------------
+  - key: "q"
+    sound: "./assets/sounds/quick-beep.wav"
+    volume: 0.5
+    description: "Quick beep"
+    
+  - key: "w"
+    sound: "./assets/sounds/weapon.wav"
+    volume: 0.8
+    description: "Weapon sound"
+
+  # -------------------------------------------------------------------------
+  # MODIFIER COMBINATIONS - CTRL
+  # -------------------------------------------------------------------------
+  - key: "ctrl+F1"
+    sound: "./assets/sounds/airhorn.mp3"
+    volume: 1.0
+    stopOthers: true
+    description: "Airhorn blast"
+    
+  - key: "ctrl+F2"
+    sound: "./assets/sounds/dramatic.wav"
+    volume: 0.8
+    description: "Dramatic effect"
+
+  # -------------------------------------------------------------------------
+  # MODIFIER COMBINATIONS - SHIFT
+  # -------------------------------------------------------------------------
+  - key: "shift+F1"
+    sound: "./assets/sounds/wow.mp3"
+    volume: 0.8
+    description: "Wow exclamation"
+    
+  - key: "shift+space"
+    sound: "./assets/sounds/build-up.mp3"
+    volume: 0.7
+    description: "Music build-up"
+
+  # -------------------------------------------------------------------------
+  # COMPLEX COMBINATIONS
+  # -------------------------------------------------------------------------
+  - key: "ctrl+shift+F1"
+    sound: "./assets/sounds/emergency.wav"
+    volume: 1.0
+    loop: true
+    stopOthers: true
+    description: "Emergency alert"
+
+  # -------------------------------------------------------------------------
+  # SPECIAL KEYS
+  # -------------------------------------------------------------------------
+  - key: "space"
+    sound: "./assets/sounds/kick-drum.wav"
+    volume: 0.8
+    description: "Kick drum"
+    
+  - key: "enter"
+    sound: "./assets/sounds/confirm.wav"
+    volume: 0.6
+    description: "Confirm action"
+    
+  - key: "escape"
+    sound: "./assets/sounds/cancel.wav"
+    volume: 0.6
+    stopOthers: true                      # Good for stopping all sounds
+    description: "Cancel/Stop all"
+
+# =============================================================================
+# SETTINGS (Currently Implemented)
+# =============================================================================
+settings:
+  # Automatically reload config when file changes (IMPLEMENTED)
+  hotReload: true
+  
+  # Preload all sounds at startup for faster playback (IMPLEMENTED)
+  preloadSounds: true
+  
+  # Work even when application is not focused (IMPLEMENTED)
+  globalHotkeys: true
+  
+  # System tray (NOT IMPLEMENTED - keep false)
+  systemTray: false
+  
+  # Logging configuration (IMPLEMENTED)
+  logging:
+    level: "info"                         # debug, info, warn, error
+
+# =============================================================================
+# SUPPORTED KEY NAMES (Currently Working)
+# =============================================================================
+# Single Keys:
+# - Letters: a, b, c, ..., z
+# - Numbers: 1, 2, 3, ..., 9, 0  
+# - Function: F1, F2, F3, ..., F12
+# - Numpad: numpad0, numpad1, numpad2, ..., numpad9
+# - Special: space, enter, escape, tab, backspace
+# - Arrows: up, down, left, right
+#
+# Modifiers (IMPLEMENTED):
+# - ctrl, shift, alt, meta
+#
+# Combinations (IMPLEMENTED):
+# - ctrl+key, shift+key, alt+key
+# - ctrl+shift+key, ctrl+alt+key, shift+alt+key  
+# - ctrl+shift+alt+key
+#
+# =============================================================================
+# KEYBIND PROPERTIES (Currently Supported)
+# =============================================================================
+# Required:
+# - key: The keyboard key or combination
+# - sound: Path to audio file (relative to project root)
+#
+# Optional:
+# - volume: 0.0 to 1.0 (default uses audio.masterVolume)
+# - description: Human-readable description
+# - loop: true/false - Loop the sound continuously
+# - stopOthers: true/false - Stop all other sounds before playing
+#
+# NOT YET IMPLEMENTED:
+# - fadeIn, fadeOut (audio fading effects)
+# - priority (sound priority system)
+# - delay (delayed playback)
+#
+# =============================================================================
+# SUPPORTED AUDIO FORMATS
+# =============================================================================
+# Tested and working:
+# - .wav (best compatibility)
+# - .mp3 (requires libsox-fmt-mp3 on Linux)
+# - .ogg (good open source format)
+#
+# May work (depending on system):
+# - .m4a, .aac, .flac
+#
+# =============================================================================
