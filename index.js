@@ -1,89 +1,42 @@
-import SoundbindEngine from './src/core/SoundbindEngine.js';
-import logger from './src/utils/logger.js';
 import process from 'process';
-
-class Soundbind {
-    constructor(options = {}) {
-        this.options = {
-            logLevel: 'info',
-            maxConcurrentSounds: 5,
-            defaultVolume: 0.8,
-            ...options
-        };
-        
-        this.engine = new SoundbindEngine(this.options);
-        this.isRunning = false;
-    }
-
-    async start(configPath = 'src/configs/default.yaml') {
-        if (this.isRunning) {
-            throw new Error('Soundbind is already running');
-        }
-        
-        try {
-            await this.engine.loadConfig(configPath);
-            await this.engine.initialize();
-            this.isRunning = true;
-            
-            logger.info('Soundbind started successfully!');
-            return this;
-        } catch (error) {
-            logger.error(`Failed to start soundbind: ${error.message}`);
-            throw error;
-        }
-    }
-
-    async stop() {
-        if (!this.isRunning) return;
-        
-        try {
-            await this.engine.cleanup();
-            this.isRunning = false;
-            logger.info('Soundbind stopped');
-        } catch (error) {
-            logger.error(`Error stopping soundbind: ${error.message}`);
-            throw error;
-        }
-    }
-
-    async playSound(soundFile, options = {}) {
-        if (!this.isRunning) {
-            throw new Error('Soundbind is not running');
-        }
-        return this.engine.playSound(soundFile, options);
-    }
-
-    async reloadConfig(configPath) {
-        if (!this.isRunning) {
-            throw new Error('Soundbind is not running');
-        }
-        return this.engine.reloadConfig(configPath);
-    }
-
-    getStatus() {
-        return {
-            running: this.isRunning,
-            activeKeybinds: this.engine.getActiveKeybinds(),
-            loadedSounds: this.engine.getLoadedSounds(),
-            config: this.engine.config
-        };
-    }
-}
+import path from 'path';
+import Soundbind from './src/Soundbind.js';
 
 // Check if this is the main module (CLI usage)
 const isMainModule = import.meta.url === `file://${process.argv[1]}`;
 
 if (isMainModule) {
-    const configPath = process.argv[2] || 'src/configs/default.yaml';
+    const configNameOrPath = process.argv[2] || 'default';
+    const configPath = Soundbind.resolveConfigPath(configNameOrPath);
+    
+    if (!configPath) {
+        console.error(`❌ Configuration not found: ${configNameOrPath}`);
+        
+        const availableConfigs = Soundbind.listAvailableConfigs();
+        if (availableConfigs.length > 0) {
+            console.error(`\nAvailable configs: ${availableConfigs.join(', ')}`);
+        }
+        
+        console.error('\nUsage: npm start [config-name]');
+        console.error('Example: npm start gaming');
+        console.error('         npm start default');
+        process.exit(1);
+    }
+
+    console.log('🎵 Soundbind keyboard player');
+    console.log(`📁 Config: ${path.basename(configPath)}`);
+    console.log(`📂 Path: ${configPath}\n`);
+    
     const soundbind = new Soundbind();
     
     soundbind.start(configPath)
         .then(() => {
-            console.log('Soundbind is running! Press Ctrl+C to stop.');
+            console.log('✅ Soundbind is running!');
+            console.log('Press Ctrl+C to stop.\n');
             
             // Handle graceful shutdown
             process.on('SIGINT', async () => {
-                console.log('\nShutting down...');
+                console.log('\n🛑 Shutting down...');
                 await soundbind.stop();
                 process.exit(0);
             });
@@ -94,9 +47,7 @@ if (isMainModule) {
             });
         })
         .catch((error) => {
-            console.error('Failed to start soundbind:', error.message);
+            console.error('❌ Failed to start:', error.message);
             process.exit(1);
         });
 }
-
-export default Soundbind;
