@@ -1,8 +1,11 @@
-Dim oPlayer
+Dim oPlayer, filePath
 Set oPlayer = CreateObject("WMPlayer.OCX")
 
+' Get arguments
+filePath = WScript.Arguments(0)
+
 ' Play audio
-oPlayer.URL = WScript.Arguments(0)
+oPlayer.URL = filePath
 oPlayer.controls.play
 
 ' Wait until playback finishes
@@ -12,3 +15,6 @@ Wend
 
 ' Release the audio file
 oPlayer.close
+
+' Exit cleanly
+WScript.Quit

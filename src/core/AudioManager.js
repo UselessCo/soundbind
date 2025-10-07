@@ -1,9 +1,10 @@
 import fs from 'fs';
 import { createRequire } from 'module';
-import { exec } from 'child_process';
+import { exec, execSync } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+
 import logger from '../utils/logger.js';
 
 // Create require function for CommonJS modules
@@ -89,7 +90,7 @@ class AudioManager {
             // Execute VBScript silently with wscript (no console window)
             const command = `wscript "${vbsScript}" "${absolutePath}"`;
             
-            logger.debug(`Playing sound via VBS: ${soundFile}`);
+            logger.debug(`Playing sound via VBS: ${soundFile} (ID: ${soundId})`);
             
             const player = exec(command, (error) => {
                 this.activeSounds.delete(soundId);
@@ -106,7 +107,8 @@ class AudioManager {
             this.activeSounds.set(soundId, {
                 player,
                 file: soundFile,
-                startTime: Date.now()
+                startTime: Date.now(),
+                pid: player.pid
             });
         });
     }
@@ -154,6 +156,31 @@ class AudioManager {
     }
 
     stopAll() {
+        if (this.useWindowsVBS)  {
+            this.stopWindowsVBS();
+        } else {
+            this.stopPlaySound();
+        }
+
+        this.activeSounds.clear();
+        logger.debug('All sounds stopped');
+    }
+
+    stopWindowsVBS() {
+        for (const [soundId, sound] of this.activeSounds.entries()) {
+            if (sound.pid) {
+                try {
+                    execSync(`taskkill /F /T /PID ${sound.pid}`, { stdio: 'ignore' });
+                    logger.debug(`Killed sound ${soundId} (PID: ${sound.pid})`);
+                } catch (error) {
+                    // Process might have already finished - this is fine
+                    logger.debug(`PID ${sound.pid} already terminated`);
+                }
+            }
+        }
+    }
+
+    stopPlaySound() {
         for (const [soundId, sound] of this.activeSounds.entries()) {
             try {
                 if (sound.player && sound.player.kill) {
@@ -163,15 +190,20 @@ class AudioManager {
                 logger.warn(`Failed to stop sound ${soundId}: ${error.message}`);
             }
         }
-        this.activeSounds.clear();
-        logger.debug('All sounds stopped');
     }
 
     stop(soundId) {
         const sound = this.activeSounds.get(soundId);
-        if (sound && sound.player && sound.player.kill) {
+        if (sound) {
             try {
-                sound.player.kill();
+                if (this.useWindowsVBS && sound.pid) {
+                    // Windows: Kill by PID
+                    execSync(`taskkill /F /T /PID ${sound.pid}`, { stdio: 'ignore' });
+                    logger.debug(`Stopped sound ${soundId} (PID: ${sound.pid})`);
+                } else if (sound.player && sound.player.kill) {
+                    // Linux/Mac: Normal kill
+                    sound.player.kill('SIGKILL');
+                }
                 this.activeSounds.delete(soundId);
                 return true;
             } catch (error) {
