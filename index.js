@@ -1,9 +1,10 @@
 import process from 'process';
 import path from 'path';
 import Soundbind from './src/Soundbind.js';
+import { pathToFileURL } from 'url';
 
 // Check if this is the main module (CLI usage)
-const isMainModule = import.meta.url === `file://${process.argv[1]}`;
+const isMainModule = import.meta.url === pathToFileURL(process.argv[1]).href;
 
 if (isMainModule) {
     const configNameOrPath = process.argv[2] || 'default';
