@@ -26,3 +26,5 @@ audio:
 # Logging configuration
 logging:
   level: "debug"                         # debug, info, warn, error
+  fileEnabled: true
+  filePath: "logs"

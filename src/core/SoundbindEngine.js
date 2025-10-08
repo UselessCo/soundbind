@@ -50,6 +50,20 @@ class SoundbindEngine {
             this.setupConfigWatcher();
         }
         
+        // Configure logger from config
+        if (this.config.logging) {
+            const loggingConfig = this.config.logging;
+            
+            if (loggingConfig.level) {
+                logger.setLevel(loggingConfig.level);
+            }
+            
+            logger.configureFileLogging({
+                enabled: loggingConfig.fileEnabled === true,
+                path: loggingConfig.filePath
+            });
+        }
+
         logger.info('Soundbind engine initialized');
     }
 
@@ -166,7 +180,21 @@ class SoundbindEngine {
             await this.preloadSounds();
         }
         await this.setupKeybinds();
-        
+
+        // Reload logger configuration
+        if (this.config.logging) {
+            const loggingConfig = this.config.logging;
+            
+            if (loggingConfig.level) {
+                logger.setLevel(loggingConfig.level);
+            }
+            
+            logger.configureFileLogging({
+                enabled: loggingConfig.fileEnabled === true,
+                path: loggingConfig.filePath
+            });
+        }
+                
         logger.info('Configuration reloaded successfully');
     }
 
@@ -182,6 +210,7 @@ class SoundbindEngine {
         this.loadedSounds.clear();
         
         logger.info('Engine cleanup completed');
+        logger.close();
     }
 
     getActiveKeybinds() {
