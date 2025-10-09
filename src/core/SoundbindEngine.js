@@ -122,12 +122,7 @@ class SoundbindEngine {
                     this.audioManager.stopAll();
                 }
                 
-                await this.playSound(keybind.sound, {
-                    volume: keybind.volume || this.options.defaultVolume,
-                    loop: keybind.loop || false,
-                    fadeIn: keybind.fadeIn,
-                    fadeOut: keybind.fadeOut
-                });
+                await this.playSound(keybind.sound);
                 
                 logger.debug(`Played sound: ${keybind.sound} (${keybind.key})`);
             } catch (error) {

@@ -6,7 +6,6 @@
 const audioConstants = {
     // Default audio configuration values
     DEFAULT_MAX_CONCURRENT_SOUNDS: 5,
-    DEFAULT_VOLUME: 0.8,
 
     // Platform-specific audio configuration
     LINUX_DEFAULT_PLAYER: 'play',

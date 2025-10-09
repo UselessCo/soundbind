@@ -16,7 +16,6 @@ class Soundbind {
         this.options = {
             logLevel: loggingConstants.DEFAULT_LOG_LEVEL,
             maxConcurrentSounds: audioConstants.DEFAULT_MAX_CONCURRENT_SOUNDS,
-            defaultVolume: audioConstants.DEFAULT_VOLUME,
             ...options
         };
         

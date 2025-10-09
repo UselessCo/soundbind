@@ -2,22 +2,19 @@
 keybinds:
   - key: "1"
     sound: "../../assets/sounds/danca-gatinho.mp3"
-    volume: 0.8
     description: "Danca gatinho sound"
+    stopOthers: true
     
   - key: "2"
     sound: "../../assets/sounds/oloquinho.mp3"
-    volume: 0.9
     description: "Oloquinho sound"
 
   - key: "3"
     sound: "../../assets/sounds/omaewa.mp3"
-    volume: 1.0
     description: "Omaewa sound"
   
   - key: "4"
     sound: "../../assets/sounds/oloquinho.ogg"
-    volume: 1.0
     description: "Oloquinho sound 2"
 
 audio:

@@ -7,10 +7,10 @@ A lightweight, cross-platform keybind-based soundboard system built with Node.js
 - 🎹 **Global Hotkeys** - Works even when the application isn't focused
 - 🔊 **Multiple Audio Formats** - Supports MP3, WAV, OGG files
 - ⚡ **Hot Reload** - Automatically reloads configuration when files change
-- 🎛️ **Volume Control** - Individual volume settings per sound
-- 🔄 **Loop Support** - Play sounds continuously or stop all others
+- 🛑 **Stop Others** - Stop all playing sounds before playing a new one
 - 🖥️ **Cross-Platform** - Windows, macOS, and Linux support
 - 📝 **YAML Configuration** - Human-readable configuration files
+- 📊 **File Logging** - Optional file-based logging with daily rotation
 
 ## Quick Start
 
@@ -33,18 +33,21 @@ npm install
 keybinds:
   - key: "F1"
     sound: "../../assets/sounds/victory.mp3"
-    volume: 0.8
     description: "Victory sound"
     
   - key: "ctrl+F1"
     sound: "../../assets/sounds/airhorn.mp3"
-    volume: 1.0
     stopOthers: true
     description: "Airhorn blast"
 
 audio:
   player: "play"  # Recommended for Linux
   maxConcurrent: 5
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
 ```
 
 2. Add your audio files to `assets/sounds/`
@@ -85,10 +88,26 @@ See `template.yaml` for a complete configuration example with all available opti
 - **Modifiers**: ctrl, shift, alt + any key
 - **Special**: space, enter, escape, tab
 
-### Audio Options
-- `volume`: 0.0 to 1.0
-- `loop`: true/false - Loop continuously
-- `stopOthers`: true/false - Stop other sounds first
+### Keybind Options
+- `stopOthers`: true/false - Stop other sounds before playing
+- `description`: Human-readable description
+
+### Logging Options
+- `level`: debug, info, warn, error - Log verbosity
+- `fileEnabled`: true/false - Enable file logging
+- `filePath`: Directory path for log files
+
+## Future Features
+
+Planned features for future releases:
+
+- 🔄 **Loop Support** - Continuous sound playback
+- 🎛️ **Volume Control** - Individual and master volume settings
+- 🎶 **Audio Fading** - Fade in/out effects
+- 🎯 **Priority System** - Sound priority management
+- ⏱️ **Delayed Playback** - Schedule sounds with delay
+- 🔊 **Output Device Selection** - Choose specific audio output
+- 📡 **System Tray** - Minimize to system tray
 
 ## Requirements
 
