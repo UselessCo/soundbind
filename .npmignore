@@ -1,0 +1,26 @@
+# Development files
+.qodo/
+logs/
+logstest/
+
+# Development dependencies
+node_modules/
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+*.test.js
+*.spec.js
+
+# Logs
+*.log
+npm-debug.log*

@@ -2,6 +2,8 @@
 
 A lightweight, cross-platform keybind-based soundboard system built with Node.js. Map keyboard shortcuts to audio files for gaming, streaming, presentations, or just for fun.
 
+> 🎵 **Community-Driven**: Contribute your sounds and configurations! Help build the ultimate soundboard collection.
+
 ## Features
 
 - 🎹 **Global Hotkeys** - Works even when the application isn't focused
@@ -12,33 +14,69 @@ A lightweight, cross-platform keybind-based soundboard system built with Node.js
 - 📝 **YAML Configuration** - Human-readable configuration files
 - 📊 **File Logging** - Optional file-based logging with daily rotation
 
-## Quick Start
+## Installation
 
-### Installation
+### Global Installation (Recommended)
 
 ```bash
-# Clone the repository
+# Install globally
+npm install -g soundbind
+
+# Or use with npx (no installation needed)
+npx soundbind
+```
+
+### Local Installation
+
+```bash
+# Install as a dependency
+npm install soundbind
+
+# Or install from source
 git clone https://github.com/UselessCo/soundbind.git
 cd soundbind
-
-# Install dependencies
 npm install
 ```
 
-### Basic Usage
+## Quick Start
 
-1. Create a configuration file in `src/configs/` (or use the existing `default.yaml`):
+### Option 1: Use Included Configs & Sounds
+
+Soundbind comes with pre-configured setups and sounds:
+
+```bash
+# Install globally
+npm install -g soundbind
+
+# Copy example config to your directory
+cp $(npm root -g)/soundbind/src/configs/default.yaml ./soundbind.yaml
+
+# Run it!
+soundbind
+```
+
+Included configs:
+- `default.yaml` - Basic setup with example sounds
+- `template.yaml` - Comprehensive template with all options
+
+### Option 2: Create Your Own Config
+
+1. Create a `soundbind.yaml` configuration file in your project directory:
 
 ```yaml
 keybinds:
-  - key: "F1"
-    sound: "../../assets/sounds/victory.mp3"
-    description: "Victory sound"
+  - key: "1"
+    sound: "./node_modules/soundbind/assets/sounds/danca-gatinho.mp3"
+    description: "Danca gatinho"
     
-  - key: "ctrl+F1"
-    sound: "../../assets/sounds/airhorn.mp3"
-    stopOthers: true
-    description: "Airhorn blast"
+  - key: "2"
+    sound: "./node_modules/soundbind/assets/sounds/oloquinho.mp3"
+    description: "Oloquinho"
+    
+  # Or use your own sounds
+  - key: "F1"
+    sound: "./my-sounds/custom.mp3"
+    description: "My custom sound"
 
 audio:
   player: "play"  # Recommended for Linux
@@ -50,19 +88,22 @@ logging:
   filePath: "logs"
 ```
 
-2. Add your audio files to `assets/sounds/`
+2. Sounds are included in the package! Or add your own to a `my-sounds/` directory
 
 3. Run Soundbind:
 
 ```bash
-# Run with default config
+# If installed globally
+soundbind
+
+# With npx
+npx soundbind
+
+# With custom config path
+soundbind ./my-config.yaml
+
+# From source
 npm start
-
-# Run with custom config
-npm run dev ./src/configs/my-config.yaml
-
-# Run directly with Node.js
-node index.js ./src/configs/my-config.yaml
 ```
 
 ## Audio Setup
@@ -76,9 +117,27 @@ sudo apt install sox libsox-fmt-mp3  # Ubuntu/Debian
 ### Windows/macOS
 Audio should work out of the box with the default system player.
 
+## Programmatic Usage
+
+You can also use Soundbind as a library in your Node.js projects:
+
+```javascript
+import Soundbind from 'soundbind';
+
+const soundbind = new Soundbind();
+
+await soundbind.start('./soundbind.yaml');
+
+// Play a sound manually
+await soundbind.playSound('./sounds/beep.mp3');
+
+// Stop all sounds
+await soundbind.stop();
+```
+
 ## Configuration
 
-See `template.yaml` for a complete configuration example with all available options and supported key combinations.
+See `template.yaml` in the [repository](https://github.com/UselessCo/soundbind/blob/main/src/configs/template.yaml) for a complete configuration example with all available options and supported key combinations.
 
 ### Supported Keys
 - **Letters**: a-z
@@ -113,6 +172,37 @@ Planned features for future releases:
 
 - Node.js 14.0.0 or higher
 - Linux: SoX with MP3 support (recommended)
+
+## Contributing
+
+🎵 **We love contributions!** Especially:
+
+- **New Sounds**: Add your favorite sound effects to `assets/sounds/`
+- **Configurations**: Share your keybind setups in `src/configs/`
+- **Bug Fixes**: Help improve stability
+- **Features**: Implement items from the Future Features list
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+### Quick Contribution Guide
+
+1. Fork the repository
+2. Add your sounds to `assets/sounds/` or configs to `src/configs/`
+3. Test your changes
+4. Submit a Pull Request with description
+
+**Sound Guidelines:**
+- Format: MP3 only (for Windows compatibility)
+- Size: Under 500KB preferred
+- Quality: 128-192 kbps recommended
+- Naming: descriptive-name.mp3
+- License: Only submit sounds you have rights to use
+
+## Support
+
+- 📖 [Documentation](https://github.com/UselessCo/soundbind)
+- 🐛 [Issue Tracker](https://github.com/UselessCo/soundbind/issues)
+- 💬 [Discussions](https://github.com/UselessCo/soundbind/discussions)
 
 ## License
 
