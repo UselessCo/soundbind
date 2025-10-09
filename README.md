@@ -204,6 +204,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 - 🐛 [Issue Tracker](https://github.com/UselessCo/soundbind/issues)
 - 💬 [Discussions](https://github.com/UselessCo/soundbind/discussions)
 
+## Disclaimer
+
+This is an open-source project. Sound files and configurations are community-contributed and subject to the MIT License. Contributors represent that they have necessary rights to submit content. See [DISCLAIMER.md](DISCLAIMER.md) for full details.
+
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.

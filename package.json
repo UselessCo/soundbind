@@ -13,6 +13,8 @@
     "assets/",
     "index.js",
     "postinstall.js",
+    "CHANGELOG.md",
+    "DISCLAIMER.md",
     "README.md",
     "LICENSE",
     "CONTRIBUTING.md"
@@ -37,7 +39,6 @@
     "node-global-key-listener": "^0.3.0",
     "play-sound": "^1.1.6"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">=14.0.0"
   },

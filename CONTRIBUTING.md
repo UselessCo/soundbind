@@ -11,7 +11,7 @@ We encourage users to contribute new sound files to the package!
 1. **Format**: MP3 only (for cross-platform Windows compatibility)
 2. **Size**: Keep files under 500KB when possible
 3. **Quality**: Clear audio, no distortion, 128-192 kbps recommended
-4. **Licensing**: Only submit sounds you have rights to use
+4. **Licensing**: By contributing, you agree your submission is compatible with the MIT license (see [DISCLAIMER.md](DISCLAIMER.md))
 5. **Naming**: Use descriptive, lowercase names with hyphens (e.g., `epic-victory.mp3`)
 
 ### How to Add Sounds

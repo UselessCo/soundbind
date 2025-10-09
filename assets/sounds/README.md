@@ -58,4 +58,6 @@ keybinds:
 
 ## License
 
-All sounds in this directory must be freely usable. Contributors are responsible for ensuring they have the rights to submit sounds.
+All sounds are subject to the project's MIT License. By contributing sounds, you agree to the terms in [DISCLAIMER.md](../../DISCLAIMER.md).
+
+Contributors represent that they have the necessary rights to submit their contributions.
