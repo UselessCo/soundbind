@@ -5,7 +5,7 @@ A lightweight, cross-platform keybind-based soundboard system built with Node.js
 ## Features
 
 - 🎹 **Global Hotkeys** - Works even when the application isn't focused
-- 🔊 **Multiple Audio Formats** - Supports MP3, WAV, OGG files
+- 🔊 **MP3 Audio Support** - Universal format for all platforms
 - ⚡ **Hot Reload** - Automatically reloads configuration when files change
 - 🛑 **Stop Others** - Stop all playing sounds before playing a new one
 - 🖥️ **Cross-Platform** - Windows, macOS, and Linux support

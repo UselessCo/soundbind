@@ -180,12 +180,16 @@ logging:
 # =============================================================================
 # SUPPORTED AUDIO FORMATS
 # =============================================================================
-# Tested and working:
-# - .wav (best compatibility)
-# - .mp3 (requires libsox-fmt-mp3 on Linux)
-# - .ogg (good open source format)
+# Recommended: .mp3 (universal cross-platform support)
 #
-# May work (depending on system):
-# - .m4a, .aac, .flac
+# MP3 is the standard format for Soundbind to ensure:
+# - Windows compatibility (native Windows Media Player support)
+# - macOS compatibility (native support)
+# - Linux compatibility (with libsox-fmt-mp3)
+#
+# Recommended settings:
+# - Bitrate: 128-192 kbps
+# - Sample rate: 44.1 kHz or 48 kHz
+# - File size: Under 500KB when possible
 #
 # =============================================================================

@@ -12,10 +12,6 @@ keybinds:
   - key: "3"
     sound: "../../assets/sounds/omaewa.mp3"
     description: "Omaewa sound"
-  
-  - key: "4"
-    sound: "../../assets/sounds/oloquinho.ogg"
-    description: "Oloquinho sound 2"
 
 audio:
   player: "play"
