@@ -5,14 +5,12 @@
   "main": "index.js",
   "type": "module",
   "bin": {
-    "soundbind": "./bin/soundbind"
+    "soundbind": "./bin/soundbind.js"
   },
   "scripts": {
     "start": "node index.js",
-    "test": "jest",
     "dev": "nodemon index.js ./src/configs/default.yaml",
-    "build": "echo 'No build needed for Node.js package'",
-    "prepublishOnly": "npm test"
+    "postinstall": "node postinstall.js"
   },
   "keywords": [
     "soundbind",
