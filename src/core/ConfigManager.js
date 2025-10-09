@@ -1,7 +1,9 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { createRequire } from 'module';
-import validator from '../utils/validator.js';
+
+import validator from '../common/utils/validator.js';
+import configConstants from '../common/constants/config.js';
 
 // Create require function for CommonJS modules
 const require = createRequire(import.meta.url);
@@ -24,9 +26,9 @@ class ConfigManager {
         // Parse based on file extension
         let config;
         try {
-            if (extension === '.json') {
+            if (extension === configConstants.EXTENSION_JSON) {
                 config = JSON.parse(content);
-            } else if (['.yaml', '.yml'].includes(extension)) {
+            } else if (extension === configConstants.EXTENSION_YAML || extension === configConstants.EXTENSION_YML) {
                 const yaml = require('js-yaml');
                 config = yaml.load(content);
             } else {

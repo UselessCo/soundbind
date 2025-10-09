@@ -1,16 +1,18 @@
 import chalk from 'chalk';
 import fs from 'fs';
 import path from 'path';
+
 import dateUtils from './date.js';
+import loggingConstants from '../constants/logging.js';
 
 class Logger {
     constructor() {
-        this.level = 'info';
+        this.level = loggingConstants.DEFAULT_LOG_LEVEL;
         this.levels = {
-            debug: 0,
-            info: 1,
-            warn: 2,
-            error: 3
+            [loggingConstants.LOG_LEVEL_DEBUG]: loggingConstants.LOG_PRIORITY_DEBUG,
+            [loggingConstants.LOG_LEVEL_INFO]: loggingConstants.LOG_PRIORITY_INFO,
+            [loggingConstants.LOG_LEVEL_WARN]: loggingConstants.LOG_PRIORITY_WARN,
+            [loggingConstants.LOG_LEVEL_ERROR]: loggingConstants.LOG_PRIORITY_ERROR
         };
         
         // File logging configuration
@@ -42,7 +44,7 @@ class Logger {
         
         if (this.fileLogging) {
             // Determine log directory
-            this.logDir = options.path || 'logs';
+            this.logDir = options.path || loggingConstants.DEFAULT_LOG_DIRECTORY;
             
             try {
                 // Ensure log directory exists
@@ -88,7 +90,7 @@ class Logger {
             this.logStream = fs.createWriteStream(this.currentLogFile, { flags: 'a' });
             
             // Write session start marker
-            const startMsg = `\n${'='.repeat(80)}\nSession started: ${dateUtils.getTimestamp()}\n${'='.repeat(80)}\n`;
+            const startMsg = `\n${loggingConstants.LOG_SESSION_SEPARATOR_CHAR.repeat(loggingConstants.LOG_SESSION_SEPARATOR_WIDTH)}\nSession started: ${dateUtils.getTimestamp()}\n${loggingConstants.LOG_SESSION_SEPARATOR_CHAR.repeat(loggingConstants.LOG_SESSION_SEPARATOR_WIDTH)}\n`;
             this.logStream.write(startMsg);
         }
     }
@@ -99,7 +101,7 @@ class Logger {
 
     formatMessage(level, message, forFile = false) {
         const timestamp = dateUtils.getTimestamp();
-        const levelUpper = level.toUpperCase().padEnd(5);
+        const levelUpper = level.toUpperCase().padEnd(loggingConstants.LOG_LEVEL_STRING_PADDING);
         
         if (forFile) {
             // Plain text for file (no colors)
@@ -109,16 +111,16 @@ class Logger {
         // Colored output for console
         let coloredLevel;
         switch (level) {
-            case 'debug':
+            case loggingConstants.LOG_LEVEL_DEBUG:
                 coloredLevel = chalk.gray(levelUpper);
                 break;
-            case 'info':
+            case loggingConstants.LOG_LEVEL_INFO:
                 coloredLevel = chalk.blue(levelUpper);
                 break;
-            case 'warn':
+            case loggingConstants.LOG_LEVEL_WARN:
                 coloredLevel = chalk.yellow(levelUpper);
                 break;
-            case 'error':
+            case loggingConstants.LOG_LEVEL_ERROR:
                 coloredLevel = chalk.red(levelUpper);
                 break;
             default:
@@ -151,30 +153,30 @@ class Logger {
     }
 
     debug(message) {
-        if (this.shouldLog('debug')) {
-            console.log(this.formatMessage('debug', message));
-            this.writeToFile('debug', message);
+        if (this.shouldLog(loggingConstants.LOG_LEVEL_DEBUG)) {
+            console.log(this.formatMessage(loggingConstants.LOG_LEVEL_DEBUG, message));
+            this.writeToFile(loggingConstants.LOG_LEVEL_DEBUG, message);
         }
     }
 
     info(message) {
-        if (this.shouldLog('info')) {
-            console.log(this.formatMessage('info', message));
-            this.writeToFile('info', message);
+        if (this.shouldLog(loggingConstants.LOG_LEVEL_INFO)) {
+            console.log(this.formatMessage(loggingConstants.LOG_LEVEL_INFO, message));
+            this.writeToFile(loggingConstants.LOG_LEVEL_INFO, message);
         }
     }
 
     warn(message) {
-        if (this.shouldLog('warn')) {
-            console.log(this.formatMessage('warn', message));
-            this.writeToFile('warn', message);
+        if (this.shouldLog(loggingConstants.LOG_LEVEL_WARN)) {
+            console.log(this.formatMessage(loggingConstants.LOG_LEVEL_WARN, message));
+            this.writeToFile(loggingConstants.LOG_LEVEL_WARN, message);
         }
     }
 
     error(message) {
-        if (this.shouldLog('error')) {
-            console.error(this.formatMessage('error', message));
-            this.writeToFile('error', message);
+        if (this.shouldLog(loggingConstants.LOG_LEVEL_ERROR)) {
+            console.error(this.formatMessage(loggingConstants.LOG_LEVEL_ERROR, message));
+            this.writeToFile(loggingConstants.LOG_LEVEL_ERROR, message);
         }
     }
 

@@ -2,7 +2,7 @@
 
 import path from 'path';
 import process from 'process';
-import Soundbind from '../index.js';
+import Soundbind from '../src/Soundbind.js';
 
 const args = process.argv.slice(2);
 const configPath = args[0] || path.join(process.cwd(), 'default.yaml');

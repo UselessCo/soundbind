@@ -5,7 +5,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-import logger from '../utils/logger.js';
+import logger from '../common/utils/logger.js';
+import audioConstants from '../common/constants/audio.js';
+import processConstants from '../common/constants/process.js';
 
 // Create require function for CommonJS modules
 const require = createRequire(import.meta.url);
@@ -15,8 +17,8 @@ const __dirname = dirname(__filename);
 class AudioManager {
     constructor(options = {}) {
         this.options = {
-            maxConcurrentSounds: 5,
-            defaultVolume: 0.8,
+            maxConcurrentSounds: audioConstants.DEFAULT_MAX_CONCURRENT_SOUNDS,
+            defaultVolume: audioConstants.DEFAULT_VOLUME,
             ...options
         };
         
@@ -29,15 +31,15 @@ class AudioManager {
     async initialize(audioConfig = {}) {
         const platform = process.platform;
         
-        if (platform === 'win32') {
+        if (platform === processConstants.PLATFORM_WINDOWS) {
             // Windows: Use VBScript for silent background playback
             this.useWindowsVBS = true;
             logger.info('Using Windows Media Player via VBScript');
         } else {
             // Linux/macOS: Use play-sound
-            // Linux: Explicitly set SoX if not configured
-            if (platform === 'linux' && !audioConfig.player) {
-                audioConfig.player = 'play'; // SoX
+            // Linux: Explicitly set default player if not configured
+            if (platform === processConstants.PLATFORM_LINUX && !audioConfig.player) {
+                audioConfig.player = audioConstants.LINUX_DEFAULT_PLAYER;
             }
             // macOS: Automatically uses afplay (play-sound default)
             
@@ -79,7 +81,7 @@ class AudioManager {
             const absolutePath = path.resolve(soundFile);
             
             // Path to VBScript file
-            const vbsScript = path.join(__dirname, '../../bin/play-sound-windows.vbs');
+            const vbsScript = path.join(__dirname, audioConstants.WINDOWS_VBS_SCRIPT_PATH);
             
             // Check if VBS script exists
             if (!fs.existsSync(vbsScript)) {
@@ -88,7 +90,7 @@ class AudioManager {
             }
             
             // Execute VBScript silently with wscript (no console window)
-            const command = `wscript "${vbsScript}" "${absolutePath}"`;
+            const command = `${audioConstants.WINDOWS_SCRIPT_EXECUTOR} "${vbsScript}" "${absolutePath}"`;
             
             logger.debug(`Playing sound via VBS: ${soundFile} (ID: ${soundId})`);
             
@@ -170,7 +172,7 @@ class AudioManager {
         for (const [soundId, sound] of this.activeSounds.entries()) {
             if (sound.pid) {
                 try {
-                    execSync(`taskkill /F /T /PID ${sound.pid}`, { stdio: 'ignore' });
+                    execSync(`${audioConstants.WINDOWS_KILL_COMMAND} ${sound.pid}`, { stdio: 'ignore' });
                     logger.debug(`Killed sound ${soundId} (PID: ${sound.pid})`);
                 } catch (error) {
                     // Process might have already finished - this is fine
@@ -198,11 +200,11 @@ class AudioManager {
             try {
                 if (this.useWindowsVBS && sound.pid) {
                     // Windows: Kill by PID
-                    execSync(`taskkill /F /T /PID ${sound.pid}`, { stdio: 'ignore' });
+                    execSync(`${audioConstants.WINDOWS_KILL_COMMAND} ${sound.pid}`, { stdio: 'ignore' });
                     logger.debug(`Stopped sound ${soundId} (PID: ${sound.pid})`);
                 } else if (sound.player && sound.player.kill) {
                     // Linux/Mac: Normal kill
-                    sound.player.kill('SIGKILL');
+                    sound.player.kill(processConstants.SIGNAL_KILL);
                 }
                 this.activeSounds.delete(soundId);
                 return true;

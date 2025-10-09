@@ -25,14 +25,9 @@ const keybindConstants = {
 
     // Key event states
     KEY_STATE_DOWN: 'DOWN',
-    KEY_STATE_UP: 'UP',
 
     // Key combination parsing
     KEY_COMBINATION_SEPARATOR: '+',
-
-    // Default keybind behavior
-    DEFAULT_LOOP: false,
-    DEFAULT_STOP_OTHERS: false
 };
 
 export default keybindConstants;

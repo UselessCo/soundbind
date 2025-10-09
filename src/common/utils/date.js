@@ -1,3 +1,5 @@
+import loggingConstants from '../constants/logging.js';
+
 /**
  * Get current date formatted as DDMMYYYY
  * @returns {string} Date string in format DDMMYYYY (e.g., "01102025")
@@ -20,7 +22,7 @@ function getTimestamp() {
  * @param {string} extension - File extension (default: 'log')
  * @returns {string} Filename in format DDMMYYYY.log
  */
-function getLogFilename(extension = 'log') {
+function getLogFilename(extension = loggingConstants.DEFAULT_LOG_FILE_EXTENSION) {
     return `${getDateString()}.${extension}`;
 }
 

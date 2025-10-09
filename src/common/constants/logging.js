@@ -20,19 +20,11 @@ const loggingConstants = {
     DEFAULT_LOG_LEVEL: 'info',
     DEFAULT_LOG_DIRECTORY: 'logs',
     DEFAULT_LOG_FILE_EXTENSION: 'log',
-    DEFAULT_FILE_LOGGING_ENABLED: false,
 
     // Log formatting constants
     LOG_SESSION_SEPARATOR_WIDTH: 80,
     LOG_SESSION_SEPARATOR_CHAR: '=',
     LOG_LEVEL_STRING_PADDING: 5,
-
-    // Date and time formatting
-    DATE_FORMAT_SEPARATOR_T: 'T',
-    DATE_FORMAT_SEPARATOR_DASH: '-',
-    TIMESTAMP_SEPARATOR_SPACE: ' ',
-    TIMESTAMP_SLICE_START: 0,
-    TIMESTAMP_SLICE_END: 19
 };
 
 export default loggingConstants;

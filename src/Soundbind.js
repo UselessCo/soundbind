@@ -1,8 +1,12 @@
-import SoundbindEngine from './core/SoundbindEngine.js';
-import logger from './utils/logger.js';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import path from 'path';
+
+import SoundbindEngine from './core/SoundbindEngine.js';
+import logger from './common/utils/logger.js';
+import configConstants from './common/constants/config.js';
+import loggingConstants from './common/constants/logging.js';
+import audioConstants from './common/constants/audio.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -10,9 +14,9 @@ const __dirname = path.dirname(__filename);
 class Soundbind {
     constructor(options = {}) {
         this.options = {
-            logLevel: 'info',
-            maxConcurrentSounds: 5,
-            defaultVolume: 0.8,
+            logLevel: loggingConstants.DEFAULT_LOG_LEVEL,
+            maxConcurrentSounds: audioConstants.DEFAULT_MAX_CONCURRENT_SOUNDS,
+            defaultVolume: audioConstants.DEFAULT_VOLUME,
             ...options
         };
         
@@ -20,7 +24,7 @@ class Soundbind {
         this.isRunning = false;
     }
 
-    async start(configPath = 'configs/default.yaml') {
+    async start(configPath = configConstants.DEFAULT_CONFIG_PATH) {
         if (this.isRunning) {
             throw new Error('Soundbind is already running');
         }
@@ -82,8 +86,12 @@ class Soundbind {
         }
 
         // Otherwise, look in src/configs directory
-        const configsDir = path.join(__dirname, 'configs');
-        const possibleExtensions = ['.yaml', '.yml', '.json'];
+        const configsDir = path.join(__dirname, configConstants.CONFIG_DIRECTORY);
+        const possibleExtensions = [
+            configConstants.EXTENSION_YAML,
+            configConstants.EXTENSION_YML,
+            configConstants.EXTENSION_JSON
+        ];
         
         // Try to find the config file with different extensions
         for (const ext of possibleExtensions) {
@@ -104,8 +112,12 @@ class Soundbind {
 
     // Helper to list available configs
     static listAvailableConfigs() {
-        const configsDir = path.join(__dirname, 'configs');
-        const possibleExtensions = ['.yaml', '.yml', '.json'];
+        const configsDir = path.join(__dirname, configConstants.CONFIG_DIRECTORY);
+        const possibleExtensions = [
+            configConstants.EXTENSION_YAML,
+            configConstants.EXTENSION_YML,
+            configConstants.EXTENSION_JSON
+        ];
         
         if (!fs.existsSync(configsDir)) {
             return [];

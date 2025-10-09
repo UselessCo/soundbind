@@ -1,5 +1,7 @@
 import { createRequire } from 'module';
-import logger from '../utils/logger.js';
+
+import logger from '../common/utils/logger.js';
+import keybindConstants from '../common/constants/keybind.js';
 
 // Create require function for CommonJS modules
 const require = createRequire(import.meta.url);
@@ -57,7 +59,7 @@ class KeybindManager {
     }
 
     parseKeyString(keyString) {
-        const parts = keyString.toLowerCase().split('+');
+        const parts = keyString.toLowerCase().split(keybindConstants.KEY_COMBINATION_SEPARATOR);
         const modifiers = {
             ctrl: false,
             shift: false,
@@ -70,13 +72,13 @@ class KeybindManager {
         // Check for modifiers
         for (let i = 0; i < parts.length - 1; i++) {
             const part = parts[i].trim();
-            if (part === 'ctrl' || part === 'control') {
+            if (part === keybindConstants.MODIFIER_TYPE_CTRL || part === keybindConstants.MODIFIER_TYPE_CONTROL) {
                 modifiers.ctrl = true;
-            } else if (part === 'shift') {
+            } else if (part === keybindConstants.MODIFIER_TYPE_SHIFT) {
                 modifiers.shift = true;
-            } else if (part === 'alt') {
+            } else if (part === keybindConstants.MODIFIER_TYPE_ALT) {
                 modifiers.alt = true;
-            } else if (part === 'meta' || part === 'cmd' || part === 'command') {
+            } else if (part === keybindConstants.MODIFIER_TYPE_META || part === keybindConstants.MODIFIER_TYPE_CMD || part === keybindConstants.MODIFIER_TYPE_COMMAND) {
                 modifiers.meta = true;
             }
         }
@@ -95,10 +97,10 @@ class KeybindManager {
         
         // Check modifiers
         const currentModifiers = {
-            ctrl: down['LEFT CTRL'] || down['RIGHT CTRL'] || false,
-            shift: down['LEFT SHIFT'] || down['RIGHT SHIFT'] || false,
-            alt: down['LEFT ALT'] || down['RIGHT ALT'] || false,
-            meta: down['LEFT META'] || down['RIGHT META'] || false
+            ctrl: down[keybindConstants.MODIFIER_LEFT_CTRL] || down[keybindConstants.MODIFIER_RIGHT_CTRL] || false,
+            shift: down[keybindConstants.MODIFIER_LEFT_SHIFT] || down[keybindConstants.MODIFIER_RIGHT_SHIFT] || false,
+            alt: down[keybindConstants.MODIFIER_LEFT_ALT] || down[keybindConstants.MODIFIER_RIGHT_ALT] || false,
+            meta: down[keybindConstants.MODIFIER_LEFT_META] || down[keybindConstants.MODIFIER_RIGHT_META] || false
         };
         
         // All required modifiers must match

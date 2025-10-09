@@ -12,7 +12,6 @@ const processConstants = {
     EXIT_CODE_SUCCESS: 0,
     EXIT_CODE_ERROR: 1,
     EXIT_CODE_INVALID_CONFIG: 1,
-    EXIT_CODE_INITIALIZATION_FAILED: 1,
 
     // Process signal names
     SIGNAL_INTERRUPT: 'SIGINT',
@@ -21,7 +20,6 @@ const processConstants = {
 
     // Platform identifiers
     PLATFORM_WINDOWS: 'win32',
-    PLATFORM_MACOS: 'darwin',
     PLATFORM_LINUX: 'linux',
 
     // CLI usage messages

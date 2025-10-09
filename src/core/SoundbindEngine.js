@@ -1,7 +1,9 @@
 import ConfigManager from './ConfigManager.js';
 import AudioManager from './AudioManager.js';
 import KeybindManager from './KeybindManager.js';
-import logger from '../utils/logger.js';
+import logger from '../common/utils/logger.js';
+import keybindConstants from '../common/constants/keybind.js';
+import configConstants from '../common/constants/config.js';
 
 class SoundbindEngine {
     constructor(options = {}) {
@@ -112,7 +114,7 @@ class SoundbindEngine {
 
     createKeybindHandler(keybind) {
         return async (keyEvent) => {
-            if (keyEvent.state !== 'DOWN') return;
+            if (keyEvent.state !== keybindConstants.KEY_STATE_DOWN) return;
             
             try {
                 // Stop other sounds if requested
@@ -159,7 +161,7 @@ class SoundbindEngine {
                         } catch (error) {
                             logger.error(`Failed to reload config: ${error.message}`);
                         }
-                    }, 500);
+                    }, configConstants.CONFIG_RELOAD_DEBOUNCE_MS);
                 }
             });
         });
