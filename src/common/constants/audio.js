@@ -10,10 +10,7 @@ const audioConstants = {
     // Platform-specific audio configuration
     LINUX_DEFAULT_PLAYER: 'play',
     WINDOWS_SCRIPT_EXECUTOR: 'wscript',
-    WINDOWS_KILL_COMMAND: 'taskkill /F /T /PID',
-
-    // Relative paths for audio-related files
-    WINDOWS_VBS_SCRIPT_PATH: '../../bin/play-sound-windows.vbs',
+    WINDOWS_KILL_COMMAND: 'taskkill /F /T /PID'
 };
 
 export default audioConstants;

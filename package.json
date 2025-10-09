@@ -37,9 +37,7 @@
     "node-global-key-listener": "^0.3.0",
     "play-sound": "^1.1.6"
   },
-  "devDependencies": {
-    "jest": "^30.1.3"
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">=14.0.0"
   },

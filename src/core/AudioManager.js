@@ -18,7 +18,6 @@ class AudioManager {
     constructor(options = {}) {
         this.options = {
             maxConcurrentSounds: audioConstants.DEFAULT_MAX_CONCURRENT_SOUNDS,
-            defaultVolume: audioConstants.DEFAULT_VOLUME,
             ...options
         };
         
@@ -80,8 +79,8 @@ class AudioManager {
             // Convert to absolute path
             const absolutePath = path.resolve(soundFile);
             
-            // Path to VBScript file
-            const vbsScript = path.join(__dirname, audioConstants.WINDOWS_VBS_SCRIPT_PATH);
+            // Path to VBScript file (resolve from this file's location)
+            const vbsScript = path.resolve(__dirname, '../../bin/play-sound-windows.vbs');
             
             // Check if VBS script exists
             if (!fs.existsSync(vbsScript)) {
