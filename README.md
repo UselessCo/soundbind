@@ -56,6 +56,7 @@ soundbind
 ```
 
 Included configs:
+
 - `default.yaml` - Basic setup with example sounds
 - `template.yaml` - Comprehensive template with all options
 
@@ -65,27 +66,27 @@ Included configs:
 
 ```yaml
 keybinds:
-  - key: "1"
-    sound: "./node_modules/soundbind/assets/sounds/danca-gatinho.mp3"
-    description: "Danca gatinho"
-    
-  - key: "2"
-    sound: "./node_modules/soundbind/assets/sounds/oloquinho.mp3"
-    description: "Oloquinho"
-    
+  - key: '1'
+    sound: './node_modules/soundbind/assets/sounds/danca-gatinho.mp3'
+    description: 'Danca gatinho'
+
+  - key: '2'
+    sound: './node_modules/soundbind/assets/sounds/oloquinho.mp3'
+    description: 'Oloquinho'
+
   # Or use your own sounds
-  - key: "F1"
-    sound: "./my-sounds/custom.mp3"
-    description: "My custom sound"
+  - key: 'F1'
+    sound: './my-sounds/custom.mp3'
+    description: 'My custom sound'
 
 audio:
-  player: "play"  # Recommended for Linux
+  player: 'play' # Recommended for Linux
   maxConcurrent: 5
 
 logging:
-  level: "info"
+  level: 'info'
   fileEnabled: true
-  filePath: "logs"
+  filePath: 'logs'
 ```
 
 2. Sounds are included in the package! Or add your own to a `my-sounds/` directory
@@ -109,12 +110,15 @@ npm start
 ## Audio Setup
 
 ### Linux (Recommended)
+
 Install SoX with MP3 support:
+
 ```bash
 sudo apt install sox libsox-fmt-mp3  # Ubuntu/Debian
 ```
 
 ### Windows/macOS
+
 Audio should work out of the box with the default system player.
 
 ## Programmatic Usage
@@ -140,18 +144,21 @@ await soundbind.stop();
 See `template.yaml` in the [repository](https://github.com/UselessCo/soundbind/blob/main/src/configs/template.yaml) for a complete configuration example with all available options and supported key combinations.
 
 ### Supported Keys
+
 - **Letters**: a-z
-- **Numbers**: 0-9  
+- **Numbers**: 0-9
 - **Function Keys**: F1-F12
 - **Numpad**: numpad0-numpad9
 - **Modifiers**: ctrl, shift, alt + any key
 - **Special**: space, enter, escape, tab
 
 ### Keybind Options
+
 - `stopOthers`: true/false - Stop other sounds before playing
 - `description`: Human-readable description
 
 ### Logging Options
+
 - `level`: debug, info, warn, error - Log verbosity
 - `fileEnabled`: true/false - Enable file logging
 - `filePath`: Directory path for log files
@@ -192,6 +199,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 4. Submit a Pull Request with description
 
 **Sound Guidelines:**
+
 - Format: MP3 only (for Windows compatibility)
 - Size: Under 500KB preferred
 - Quality: 128-192 kbps recommended

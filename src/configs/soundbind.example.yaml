@@ -8,8 +8,8 @@ profile:
 
 # Audio configuration
 audio:
-  player: "play"        # Linux: "play" (SoX), Windows/macOS: auto-detected
-  maxConcurrent: 5      # Maximum simultaneous sounds
+  player: "play" # Linux: "play" (SoX), Windows/macOS: auto-detected
+  maxConcurrent: 5 # Maximum simultaneous sounds
 
 # Keybind mappings
 keybinds:
@@ -17,15 +17,15 @@ keybinds:
   - key: "1"
     sound: "./node_modules/soundbind/assets/sounds/danca-gatinho.mp3"
     description: "Danca gatinho"
-    
+
   - key: "2"
     sound: "./node_modules/soundbind/assets/sounds/oloquinho.mp3"
     description: "Oloquinho"
-    
+
   - key: "3"
     sound: "./node_modules/soundbind/assets/sounds/omaewa.mp3"
     description: "Omaewa"
-  
+
   # Or use your own sounds
   - key: "F1"
     sound: "./my-sounds/custom.mp3"
@@ -34,11 +34,11 @@ keybinds:
 
 # Settings
 settings:
-  hotReload: true       # Auto-reload config on file changes
-  preloadSounds: true   # Preload sounds at startup
+  hotReload: true # Auto-reload config on file changes
+  preloadSounds: true # Preload sounds at startup
 
 # Logging configuration
 logging:
-  level: "info"         # debug, info, warn, error
-  fileEnabled: true     # Enable file logging
-  filePath: "logs"      # Log directory
+  level: "info" # debug, info, warn, error
+  fileEnabled: true # Enable file logging
+  filePath: "logs" # Log directory

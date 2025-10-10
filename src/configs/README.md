@@ -5,17 +5,21 @@ This directory contains pre-made configuration files for Soundbind.
 ## Available Configs
 
 ### `default.yaml`
+
 Basic configuration with example sounds. Good starting point for new users.
 
 **Keys:**
+
 - `1` - Danca gatinho sound
 - `2` - Oloquinho sound
 - `3` - Omaewa sound
 
 ### `soundbind.example.yaml`
+
 Simple example showing how to use included sounds from the package. Perfect for quick start.
 
 ### `template.yaml`
+
 Comprehensive template showing all available options and key combinations. Use this as a reference when creating your own configs.
 
 ## Using Configs
@@ -54,31 +58,31 @@ Share your keybind setups with the community!
 
 ```yaml
 profile:
-  name: "Your Config Name"
-  description: "Brief description of this config"
+  name: 'Your Config Name'
+  description: 'Brief description of this config'
 
 audio:
-  player: "play"
+  player: 'play'
   maxConcurrent: 5
 
 keybinds:
-  - key: "F1"
-    sound: "../../assets/sounds/your-sound.mp3"
-    description: "Clear description"
-    
-  - key: "ctrl+F1"
-    sound: "../../assets/sounds/another-sound.mp3"
+  - key: 'F1'
+    sound: '../../assets/sounds/your-sound.mp3'
+    description: 'Clear description'
+
+  - key: 'ctrl+F1'
+    sound: '../../assets/sounds/another-sound.mp3'
     stopOthers: true
-    description: "Another sound"
+    description: 'Another sound'
 
 settings:
   hotReload: true
   preloadSounds: true
 
 logging:
-  level: "info"
+  level: 'info'
   fileEnabled: true
-  filePath: "logs"
+  filePath: 'logs'
 ```
 
 ### How to Contribute

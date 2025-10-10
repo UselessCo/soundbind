@@ -25,12 +25,13 @@ We encourage users to contribute new sound files to the package!
    - Description of the sound
 
 Example:
+
 ```yaml
 # src/configs/gaming.yaml
 keybinds:
-  - key: "F1"
-    sound: "../../assets/sounds/epic-victory.mp3"
-    description: "Epic victory sound"
+  - key: 'F1'
+    sound: '../../assets/sounds/epic-victory.mp3'
+    description: 'Epic victory sound'
 ```
 
 ## ⚙️ Adding Configurations
@@ -48,26 +49,26 @@ Share your keybind configurations with the community!
 
 ```yaml
 profile:
-  name: "Your Config Name"
-  description: "Brief description"
+  name: 'Your Config Name'
+  description: 'Brief description'
 
 audio:
-  player: "play"
+  player: 'play'
   maxConcurrent: 5
 
 keybinds:
-  - key: "F1"
-    sound: "../../assets/sounds/your-sound.mp3"
-    description: "Clear description"
+  - key: 'F1'
+    sound: '../../assets/sounds/your-sound.mp3'
+    description: 'Clear description'
 
 settings:
   hotReload: true
   preloadSounds: true
 
 logging:
-  level: "info"
+  level: 'info'
   fileEnabled: true
-  filePath: "logs"
+  filePath: 'logs'
 ```
 
 ## 🐛 Reporting Bugs
@@ -157,12 +158,14 @@ soundbind/
 ## 🎯 Areas for Contribution
 
 ### High Priority
+
 - [ ] More sound files
 - [ ] Themed configurations
 - [ ] Platform-specific testing
 - [ ] Documentation improvements
 
 ### Future Features (Help Wanted!)
+
 - [ ] Loop support
 - [ ] Volume control
 - [ ] Audio fading

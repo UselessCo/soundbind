@@ -16,11 +16,11 @@ profile:
 # =============================================================================
 audio:
   # Audio player (recommended for Linux with SoX installed)
-  player: "play"                          # SoX player
+  player: "play" # SoX player
   # player: "paplay"                      # PulseAudio (Linux alternative)
   # player: "mpg123"                      # Good for MP3 files
   # player: "mplayer"                     # Cross-platform alternative
-  
+
   # Maximum number of sounds playing simultaneously
   maxConcurrent: 5
 
@@ -34,24 +34,24 @@ keybinds:
   - key: "F1"
     sound: "./assets/sounds/victory.mp3"
     description: "Victory sound"
-    
+
   - key: "F2"
     sound: "./assets/sounds/explosion.wav"
     description: "Explosion effect"
-    
+
   - key: "F3"
     sound: "./assets/sounds/laser.wav"
     description: "Laser blast"
-    
+
   - key: "F4"
     sound: "./assets/sounds/notification.ogg"
     description: "Alert notification"
-    
+
   - key: "F5"
     sound: "./assets/sounds/epic-theme.mp3"
-    stopOthers: true                      # Stop other sounds first
+    stopOthers: true # Stop other sounds first
     description: "Epic background music"
-    
+
   - key: "F6"
     sound: "./assets/sounds/ambience.wav"
     description: "Background ambience"
@@ -62,11 +62,11 @@ keybinds:
   - key: "numpad1"
     sound: "./assets/sounds/coin.wav"
     description: "Coin pickup"
-    
+
   - key: "numpad2"
     sound: "./assets/sounds/power-up.wav"
     description: "Power up sound"
-    
+
   - key: "numpad3"
     sound: "./assets/sounds/jump.wav"
     description: "Jump sound"
@@ -77,7 +77,7 @@ keybinds:
   - key: "q"
     sound: "./assets/sounds/quick-beep.wav"
     description: "Quick beep"
-    
+
   - key: "w"
     sound: "./assets/sounds/weapon.wav"
     description: "Weapon sound"
@@ -89,7 +89,7 @@ keybinds:
     sound: "./assets/sounds/airhorn.mp3"
     stopOthers: true
     description: "Airhorn blast"
-    
+
   - key: "ctrl+F2"
     sound: "./assets/sounds/dramatic.wav"
     description: "Dramatic effect"
@@ -100,7 +100,7 @@ keybinds:
   - key: "shift+F1"
     sound: "./assets/sounds/wow.mp3"
     description: "Wow exclamation"
-    
+
   - key: "shift+space"
     sound: "./assets/sounds/build-up.mp3"
     description: "Music build-up"
@@ -119,14 +119,14 @@ keybinds:
   - key: "space"
     sound: "./assets/sounds/kick-drum.wav"
     description: "Kick drum"
-    
+
   - key: "enter"
     sound: "./assets/sounds/confirm.wav"
     description: "Confirm action"
-    
+
   - key: "escape"
     sound: "./assets/sounds/cancel.wav"
-    stopOthers: true                      # Good for stopping all sounds
+    stopOthers: true # Good for stopping all sounds
     description: "Cancel/Stop all"
 
 # =============================================================================
@@ -135,7 +135,7 @@ keybinds:
 settings:
   # Automatically reload config when file changes
   hotReload: true
-  
+
   # Preload all sounds at startup for faster playback
   preloadSounds: true
 
@@ -143,16 +143,16 @@ settings:
 # LOGGING CONFIGURATION
 # =============================================================================
 logging:
-  level: "info"                           # debug, info, warn, error
-  fileEnabled: true                       # Enable file logging
-  filePath: "logs"                        # Log directory path
+  level: "info" # debug, info, warn, error
+  fileEnabled: true # Enable file logging
+  filePath: "logs" # Log directory path
 
 # =============================================================================
 # SUPPORTED KEY NAMES (Currently Working)
 # =============================================================================
 # Single Keys:
 # - Letters: a, b, c, ..., z
-# - Numbers: 1, 2, 3, ..., 9, 0  
+# - Numbers: 1, 2, 3, ..., 9, 0
 # - Function: F1, F2, F3, ..., F12
 # - Numpad: numpad0, numpad1, numpad2, ..., numpad9
 # - Special: space, enter, escape, tab, backspace
@@ -163,7 +163,7 @@ logging:
 #
 # Combinations (IMPLEMENTED):
 # - ctrl+key, shift+key, alt+key
-# - ctrl+shift+key, ctrl+alt+key, shift+alt+key  
+# - ctrl+shift+key, ctrl+alt+key, shift+alt+key
 # - ctrl+shift+alt+key
 #
 # =============================================================================

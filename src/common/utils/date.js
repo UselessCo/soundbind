@@ -5,8 +5,8 @@ import loggingConstants from '../constants/logging.js';
  * @returns {string} Date string in format DDMMYYYY (e.g., "01102025")
  */
 function getDateString() {
-    const now = new Date();
-    return now.toISOString().split('T')[0].replace(/-/g, '');
+  const now = new Date();
+  return now.toISOString().split('T')[0].replace(/-/g, '');
 }
 
 /**
@@ -14,7 +14,7 @@ function getDateString() {
  * @returns {string} Timestamp string
  */
 function getTimestamp() {
-    return new Date().toISOString().replace('T', ' ').slice(0, 19);
+  return new Date().toISOString().replace('T', ' ').slice(0, 19);
 }
 
 /**
@@ -23,11 +23,11 @@ function getTimestamp() {
  * @returns {string} Filename in format DDMMYYYY.log
  */
 function getLogFilename(extension = loggingConstants.DEFAULT_LOG_FILE_EXTENSION) {
-    return `${getDateString()}.${extension}`;
+  return `${getDateString()}.${extension}`;
 }
 
 export default {
-    getDateString,
-    getTimestamp,
-    getLogFilename
+  getDateString,
+  getTimestamp,
+  getLogFilename
 };

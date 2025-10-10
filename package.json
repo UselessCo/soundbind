@@ -1,72 +1,72 @@
 {
-  "name": "soundbind",
-  "version": "1.0.0",
-  "description": "A lightweight, cross-platform keybind-based soundboard system. Map keyboard shortcuts to audio files for gaming, streaming, presentations, or just for fun.",
-  "main": "index.js",
-  "type": "module",
-  "bin": {
-    "soundbind": "./bin/soundbind.js"
-  },
-  "files": [
-    "bin/",
-    "src/",
-    "assets/",
-    "index.js",
-    "postinstall.js",
-    "CHANGELOG.md",
-    "DISCLAIMER.md",
-    "README.md",
-    "LICENSE",
-    "CONTRIBUTING.md"
-  ],
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js ./src/configs/default.yaml",
-    "postinstall": "node postinstall.js",
-    "lint": "node lint-assets.js && eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write \"**/*.{js,json,md,yaml,yml}\"",
-    "format:check": "prettier --check \"**/*.{js,json,md,yaml,yml}\""
-  },
-  "keywords": [
-    "soundbind",
-    "audio",
-    "keybind",
-    "hotkeys",
-    "gaming",
-    "streaming",
-    "cli"
-  ],
-  "dependencies": {
-    "chalk": "^5.6.2",
-    "js-yaml": "^4.1.0",
-    "node-global-key-listener": "^0.3.0",
-    "play-sound": "^1.1.6"
-  },
-  "devDependencies": {
-      "@eslint/js": "^9.37.0",
-      "eslint": "^9.37.0",
-      "eslint-config-prettier": "^9.1.0",
-      "eslint-plugin-check-file": "^3.3.0",
-      "eslint-plugin-prettier": "^5.5.4",
-      "prettier": "^3.2.5"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "os": [
-    "darwin",
-    "linux",
-    "win32"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/UselessCo/soundbind.git"
-  },
-  "bugs": {
-    "url": "https://github.com/UselessCo/soundbind/issues"
-  },
-  "homepage": "https://github.com/UselessCo/soundbind#readme",
-  "author": "UselessCo",
-  "license": "MIT"
+    "name": "soundbind",
+    "version": "1.0.0",
+    "description": "A lightweight, cross-platform keybind-based soundboard system. Map keyboard shortcuts to audio files for gaming, streaming, presentations, or just for fun.",
+    "main": "index.js",
+    "type": "module",
+    "bin": {
+        "soundbind": "./bin/soundbind.js"
+    },
+    "files": [
+        "bin/",
+        "src/",
+        "assets/",
+        "index.js",
+        "postinstall.js",
+        "CHANGELOG.md",
+        "DISCLAIMER.md",
+        "README.md",
+        "LICENSE",
+        "CONTRIBUTING.md"
+    ],
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js ./src/configs/default.yaml",
+        "postinstall": "node postinstall.js",
+        "lint": "node lint-assets.js && eslint .",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier --write \"**/*.{js,json,md,yaml,yml}\"",
+        "format:check": "prettier --check \"**/*.{js,json,md,yaml,yml}\""
+    },
+    "keywords": [
+        "soundbind",
+        "audio",
+        "keybind",
+        "hotkeys",
+        "gaming",
+        "streaming",
+        "cli"
+    ],
+    "dependencies": {
+        "chalk": "^5.6.2",
+        "js-yaml": "^4.1.0",
+        "node-global-key-listener": "^0.3.0",
+        "play-sound": "^1.1.6"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.37.0",
+        "eslint": "^9.37.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-check-file": "^3.3.0",
+        "eslint-plugin-prettier": "^5.5.4",
+        "prettier": "^3.2.5"
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "os": [
+        "darwin",
+        "linux",
+        "win32"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/UselessCo/soundbind.git"
+    },
+    "bugs": {
+        "url": "https://github.com/UselessCo/soundbind/issues"
+    },
+    "homepage": "https://github.com/UselessCo/soundbind#readme",
+    "author": "UselessCo",
+    "license": "MIT"
 }

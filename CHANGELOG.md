@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-10-09
 
 ### Added
+
 - Initial release of Soundbind
 - Global hotkey support for keyboard shortcuts
 - MP3 audio playback (cross-platform)
@@ -21,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Comprehensive documentation
 
 ### Features
+
 - Cross-platform support (Windows, macOS, Linux)
 - YAML configuration files
 - Preload sounds for faster playback
@@ -28,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Graceful shutdown handling
 
 ### Technical
+
 - ES modules with proper `.js` extensions
 - Organized constants structure
 - Proper error handling

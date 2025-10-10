@@ -4,7 +4,7 @@ keybinds:
     sound: "../../assets/sounds/danca-gatinho.mp3"
     description: "Danca gatinho sound"
     stopOthers: true
-    
+
   - key: "2"
     sound: "../../assets/sounds/oloquinho.mp3"
     description: "Oloquinho sound"
@@ -18,6 +18,6 @@ audio:
 
 # Logging configuration
 logging:
-  level: "debug"                         # debug, info, warn, error
+  level: "debug" # debug, info, warn, error
   fileEnabled: true
   filePath: "logs"

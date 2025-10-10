@@ -42,18 +42,18 @@ Reference sounds in your config files:
 
 ```yaml
 keybinds:
-  - key: "1"
-    sound: "./node_modules/soundbind/assets/sounds/danca-gatinho.mp3"
-    description: "Dance cat"
+  - key: '1'
+    sound: './node_modules/soundbind/assets/sounds/danca-gatinho.mp3'
+    description: 'Dance cat'
 ```
 
 Or if using from source:
 
 ```yaml
 keybinds:
-  - key: "1"
-    sound: "../../assets/sounds/danca-gatinho.mp3"
-    description: "Dance cat"
+  - key: '1'
+    sound: '../../assets/sounds/danca-gatinho.mp3'
+    description: 'Dance cat'
 ```
 
 ## License

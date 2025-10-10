@@ -17,16 +17,18 @@ assignees: ''
 **Keys Used:** (e.g., F1-F12, numpad, ctrl+keys)
 
 ## Preview
+
 ```yaml
 # Paste a snippet of your config
 keybinds:
-  - key: "F1"
-    sound: "..."
-    description: "..."
+  - key: 'F1'
+    sound: '...'
+    description: '...'
 ```
 
 ---
 
 **I want to contribute this config:**
+
 - [ ] Yes, I'll submit a PR with the config file
 - [ ] No, just sharing (someone else can add it)
