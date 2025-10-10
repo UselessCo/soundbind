@@ -1,0 +1,6 @@
+node_modules/
+logs/
+*.tgz
+*.log
+package-lock.json
+bin/play-sound-windows.vbs

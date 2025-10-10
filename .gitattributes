@@ -1,0 +1,19 @@
+# Auto detect text files and normalize line endings to LF in repository
+* text=auto eol=lf
+
+# Explicitly declare text files
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.sh text eol=lf
+
+# Denote binary files
+*.mp3 binary
+*.ogg binary
+*.wav binary
+*.tgz binary
+
+# Windows-specific files
+*.vbs text eol=crlf
