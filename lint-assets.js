@@ -4,6 +4,10 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// Constants for file size limit
+const BYTES_PER_KB = 1024;
+const MAX_FILE_SIZE = 500 * BYTES_PER_KB; // 500 KB in bytes
+
 // ANSI escape codes for red text and underline
 const BOLD_RED = '\x1b[1m\x1b[31m';
 const RED = '\x1b[31m';
@@ -67,6 +71,14 @@ const lintAssets = (dir) => {
           `${UNDERLINE}${itemPath}${RESET}\n  ${RED}error${RESET}  The filename "${item}" ${fileCheck.reason}\n`
         );
         errorCount += 1; // Increment error count for file issues
+      }
+      if (item.endsWith('.mp3') && stats.size > MAX_FILE_SIZE) {
+        // Convert the file size from bytes to KB for readability
+        const sizeKB = (stats.size / BYTES_PER_KB).toFixed(2);
+        console.log(
+          `${UNDERLINE}${itemPath}${RESET}\n  ${RED}error${RESET}  File size ${sizeKB} KB exceeds limit of 500 KB\n`
+        );
+        errorCount++;
       }
     }
   });
