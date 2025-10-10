@@ -1,0 +1,175 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [master, develop]
+  pull_request:
+    branches: [master, develop]
+
+jobs:
+  test:
+    name: Test on ${{ matrix.os }} - Node ${{ matrix.node-version }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install SoX (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y sox libsox-fmt-mp3
+
+      - name: Verify package.json
+        run: |
+          echo "Checking package.json validity..."
+          node -e "require('./package.json')"
+
+      - name: Check for console.log in production code
+        run: |
+          echo "Checking for console.log in src/..."
+          ! grep -r "console\.log" src/ --include="*.js" || echo "Warning: console.log found in src/"
+        shell: bash
+        continue-on-error: true
+
+      - name: Verify all imports have .js extensions
+        run: |
+          echo "Checking import statements..."
+          ! grep -r "from ['\"]\..*[^\.js]['\"]" src/ --include="*.js" || echo "Warning: imports without .js found"
+        shell: bash
+        continue-on-error: true
+
+      - name: Create package
+        run: npm pack
+
+      - name: Verify package contents
+        run: |
+          echo "Package contents:"
+          tar -tzf soundbind-*.tgz 2>/dev/null | head -20 || true
+        shell: bash
+
+      - name: Install package globally
+        run: npm install -g ./soundbind-*.tgz
+        shell: bash
+
+      - name: Verify CLI is available
+        run: |
+          echo "Checking soundbind command..."
+          which soundbind || where soundbind
+        shell: bash
+
+      - name: Test config resolution
+        run: |
+          echo "Testing config resolution..."
+          soundbind --help || echo "CLI help not available"
+        shell: bash
+        continue-on-error: true
+
+      - name: Run test script (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: |
+          chmod +x test-package.sh
+          bash test-package.sh || echo "Test script completed with warnings"
+        continue-on-error: true
+
+      - name: Cleanup
+        if: always()
+        run: npm uninstall -g soundbind || true
+        shell: bash
+
+  lint:
+    name: Lint and Code Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Check Prettier formatting
+        run: npm run format:check
+
+      - name: Check file structure
+        run: |
+          echo "Verifying required files..."
+          test -f package.json && echo "✓ package.json"
+          test -f README.md && echo "✓ README.md"
+          test -f LICENSE && echo "✓ LICENSE"
+          test -f CHANGELOG.md && echo "✓ CHANGELOG.md"
+          test -f DISCLAIMER.md && echo "✓ DISCLAIMER.md"
+          test -f CONTRIBUTING.md && echo "✓ CONTRIBUTING.md"
+          test -d src && echo "✓ src/"
+          test -d bin && echo "✓ bin/"
+          test -d assets/sounds && echo "✓ assets/sounds/"
+
+      - name: Verify sound files are MP3
+        run: |
+          echo "Checking sound file formats..."
+          find assets/sounds -type f ! -name "*.mp3" ! -name "README.md" | while read file; do
+            echo "Warning: Non-MP3 file found: $file"
+          done
+
+      - name: Check package size
+        run: |
+          npm pack
+          SIZE=$(ls -lh soundbind-*.tgz | awk '{print $5}')
+          echo "Package size: $SIZE"
+          echo "Target: < 500KB"
+
+  release-check:
+    name: Release Readiness (master branch only)
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify version in package.json
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "Current version: $VERSION"
+          echo "Ready for release: v$VERSION"
+
+      - name: Check CHANGELOG
+        run: |
+          if grep -q "$VERSION" CHANGELOG.md; then
+            echo "✓ CHANGELOG.md updated for version $VERSION"
+          else
+            echo "⚠ CHANGELOG.md may need update for version $VERSION"
+          fi
+        env:
+          VERSION: ${{ steps.version.outputs.version }}

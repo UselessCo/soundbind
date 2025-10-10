@@ -83,4 +83,7 @@ if (problemCount > 0) {
   console.log(
     `${BOLD_RED}✖ ${problemCount} problem${problemCount !== 1 ? 's' : ''} (${errorCount} error${errorCount !== 1 ? 's' : ''})${RESET}`
   );
+  process.exit(1); // Exit with error code to fail CI
+} else {
+  console.log('✓ All assets follow naming conventions');
 }
