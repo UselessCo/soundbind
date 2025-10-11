@@ -1,3 +1,5 @@
+[![CI/CD](https://github.com/UselessCo/soundbind/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/UselessCo/soundbind/actions/workflows/test.yml) [![npm version](https://badge.fury.io/js/soundbind.svg)](https://www.npmjs.com/package/soundbind) [![npm downloads](https://img.shields.io/npm/dm/soundbind.svg)](https://www.npmjs.com/package/soundbind) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 # Soundbind
 
 A lightweight, cross-platform keybind-based soundboard system built with Node.js. Map keyboard shortcuts to audio files for gaming, streaming, presentations, or just for fun.
