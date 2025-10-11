@@ -5,7 +5,7 @@
     "main": "index.js",
     "type": "module",
     "bin": {
-        "soundbind": "./bin/soundbind.js"
+        "soundbind": "bin/soundbind.js"
     },
     "files": [
         "bin/",
