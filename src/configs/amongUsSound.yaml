@@ -8,7 +8,7 @@ audio:
 
 keybinds:
   - key: "4"
-    sound: "../../assets/sounds/Among-Us.mp3"
+    sound: "../../assets/sounds/among-us.mp3"
     description: "Suspenseful sound effect from Among Us"
 
 settings:
