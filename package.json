@@ -23,10 +23,23 @@
         "start": "node index.js",
         "dev": "nodemon index.js ./src/configs/default.yaml",
         "postinstall": "node postinstall.js",
-        "lint": "node lint-assets.js && eslint .",
+        "lint": "node lint-assets.js && eslint . && prettier --check \"**/*.{js,json,md,yaml,yml}\"",
         "lint:fix": "eslint . --fix",
         "format": "prettier --write \"**/*.{js,json,md,yaml,yml}\"",
-        "format:check": "prettier --check \"**/*.{js,json,md,yaml,yml}\""
+        "format:check": "prettier --check \"**/*.{js,json,md,yaml,yml}\"",
+        "prepare": "husky"
+    },
+    "lint-staged": {
+        "*.js": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{json,yaml,yml}": [
+            "prettier --write"
+        ],
+        "assets/**/*": [
+            "node lint-assets.js"
+        ]
     },
     "keywords": [
         "soundbind",
@@ -49,6 +62,8 @@
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-check-file": "^3.3.0",
         "eslint-plugin-prettier": "^5.5.4",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.3",
         "prettier": "^3.2.5"
     },
     "engines": {
