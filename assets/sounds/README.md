@@ -7,7 +7,7 @@ This directory contains community-contributed sound files for Soundbind.
 - `danca-gatinho.mp3` (32KB) - Dance cat meme sound
 - `oloquinho.mp3` (301KB) - Brazilian meme sound
 - `omaewa.mp3` (119KB) - Anime reference sound
-- `Among-Us.mp3` (74KB) - Among Us Roles Reveal
+- `among-us.mp3` (74KB) - Among Us Roles Reveal
 
 ## Contributing Sounds
 
