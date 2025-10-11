@@ -4,6 +4,42 @@ A lightweight, cross-platform keybind-based soundboard system built with Node.js
 
 > 🎵 **Community-Driven**: Contribute your sounds and configurations! Help build the ultimate soundboard collection.
 
+---
+
+## 🎃 Hacktoberfest Welcome! Perfect for First-Time Contributors
+
+**Looking for an easy first contribution?** You're in the right place! This project was specifically designed to welcome beginners and provide a meaningful contribution experience.
+
+### Why Contribute Here?
+
+- ✅ **Beginner-Friendly** - No complex algorithms or deep technical knowledge required
+- 🎵 **Fun & Creative** - Add your favorite sound effects and memes
+- 📦 **Real Impact** - Your contribution becomes part of a published npm package used by real users
+- 🚀 **Learn Git & GitHub** - Practice the full contribution workflow in a supportive environment
+- 🏆 **Build Your Portfolio** - Get your name in the contributors list of a public package
+- ⚡ **Quick Approval** - Most PRs reviewed and merged within 24 hours
+
+### Easy Ways to Contribute
+
+1. **[Add Sound Effects](../../issues/2)** (5 minutes)
+   - Drop an MP3 file in `assets/sounds/` with a kebab-case name
+2. **[Create or Update Configs](../../issues/3)** (10 minutes)
+   - Share your custom keybind setup in `src/configs/`
+3. **Improve Docs** (15 minutes)
+   - Fix typos, add examples, or clarify instructions
+4. **[Share Ideas](../../issues/1)** (5 minutes)
+   - Suggest new sounds, configs, or features
+
+**Your first PR gets you:**
+
+- 🎖️ Listed as a contributor
+- 📦 Your contribution in the next npm release
+- 🌟 Hacktoberfest credit (if participating)
+
+👉 **Ready to start?** Check out our **[good first issues](../../issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)** or read [CONTRIBUTING.md](CONTRIBUTING.md) for step-by-step instructions!
+
+---
+
 ## Features
 
 - 🎹 **Global Hotkeys** - Works even when the application isn't focused
