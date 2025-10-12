@@ -1,0 +1,28 @@
+profile:
+  name: "Bleach Sounds"
+  description: "Keybind configuration featuring Bleach-themed sounds: Bankai shout and Aizen’s welcome"
+  version: "1.0.0"
+
+audio:
+  player: "play"
+  maxConcurrent: 3
+
+keybinds:
+  - key: "F7"
+    sound: "./assets/sounds/bankai.mp3"
+    description: "Bleach Bankai shout"
+    stopOthers: true
+
+  - key: "F8"
+    sound: "./assets/sounds/aizen-yokoso.mp3"
+    description: "Aizen's 'Yōkoso Watashi no Soul Society' welcome"
+    stopOthers: true
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: false
+  filePath: "logs"
