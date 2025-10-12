@@ -2,7 +2,7 @@
 
 This directory contains pre-made configuration files for Soundbind.
 
-## Available Configs
+## Basic Configs
 
 ### `default.yaml`
 
