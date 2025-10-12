@@ -17,15 +17,6 @@ Basic configuration with example sounds. Good starting point for new users.
 ### `soundbind.example.yaml`
 
 Simple example showing how to use included sounds from the package. Perfect for quick start.
-### `bleach-sounds.yaml`
-
-Bleach-themed soundboard featuring keybinds for Bankai shout and Aizen’s iconic welcome phrase.
-
-**Keys:**
-
-- `F7` - Bleach Bankai shout  
-- `F8` - Aizen’s “Yōkoso Watashi no Soul Society” welcome
-
 
 ### `template.yaml`
 

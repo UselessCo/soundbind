@@ -7,8 +7,6 @@ This directory contains community-contributed sound files for Soundbind.
 - `danca-gatinho.mp3` (32KB) - Dance cat meme sound
 - `oloquinho.mp3` (301KB) - Brazilian meme sound
 - `omaewa.mp3` (119KB) - Anime reference sound
-- `bankai.mp3` (24KB) — Bleach “Bankai!” sound
-- `aizen-yokoso.mp3` (46KB) — Aizen’s “Yokoso Watashi no Soul Society" sound
 
 ## Contributing Sounds
 
