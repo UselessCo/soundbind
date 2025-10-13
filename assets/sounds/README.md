@@ -2,13 +2,6 @@
 
 This directory contains community-contributed sound files for Soundbind.
 
-## Included Sounds
-
-- `danca-gatinho.mp3` (32KB) - Dance cat meme sound
-- `oloquinho.mp3` (301KB) - Brazilian meme sound
-- `omaewa.mp3` (119KB) - Anime reference sound
-
-
 ## Contributing Sounds
 
 We welcome sound contributions! Please follow these guidelines:
@@ -16,10 +9,9 @@ We welcome sound contributions! Please follow these guidelines:
 ### Requirements
 
 1. **Format**: MP3 only (for Windows compatibility)
-2. **Size**: Keep files under 500KB when possible
-3. **Quality**: Clear audio, no distortion, 128-192 kbps recommended
-4. **Licensing**: Only submit sounds you have rights to use
-5. **Naming**: Use descriptive, lowercase names with hyphens
+2. **Size**: Keep files under 500KB
+3. **Licensing**: Only submit sounds you have rights to use
+4. **Naming**: Use descriptive, lowercase names with hyphens
 
 ### How to Contribute
 
@@ -28,14 +20,6 @@ We welcome sound contributions! Please follow these guidelines:
 3. Update this README with your sound info
 4. Create or update a config in `src/configs/` that uses your sound
 5. Submit a Pull Request
-
-### Sound Info Template
-
-When adding a sound, please add it to the list above:
-
-```markdown
-- `your-sound.mp3` (XXkB) - Brief description
-```
 
 ## Usage
 
