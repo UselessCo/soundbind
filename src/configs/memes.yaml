@@ -1,0 +1,29 @@
+profile:
+  name: "Meme Madness"
+  description: "Iconic meme sounds for streamers and pranksters"
+audio:
+  player: "play"
+  maxConcurrent: 4
+keybinds:
+  - key: "F1"
+    sound: "../../assets/sounds/troll-laugh.mp3"
+    description: "Trollface laugh for epic pranks"
+  - key: "F2"
+    sound: "../../assets/sounds/sad-violin"
+    description: "Sad violin humming"
+  - key: "F3"
+    sound: "../../assets/sounds/cat-laugh.mp3"
+    description: "Meme cat laughing"
+  - key: "F4"
+    sound: "../../assets/sounds/spiderman.mp3"
+    description: "Spiderman meme song"
+  - key: "F5"
+    sound: "../../assets/sounds/what-da-dog-doin.mp3"
+    description: "What the dog doing meme"
+settings:
+  hotReload: true
+  preloadSounds: true
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
