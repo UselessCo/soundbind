@@ -13,6 +13,7 @@ Basic configuration with example sounds. Good starting point for new users.
 - `1` - Danca gatinho sound
 - `2` - Oloquinho sound
 - `3` - Omaewa sound
+- `4` - Cow Moo Sound
 
 ### `soundbind.example.yaml`
 
