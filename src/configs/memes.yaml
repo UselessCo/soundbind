@@ -9,7 +9,7 @@ keybinds:
     sound: "../../assets/sounds/troll-laugh.mp3"
     description: "Trollface laugh for epic pranks"
   - key: "F2"
-    sound: "../../assets/sounds/sad-violin"
+    sound: "../../assets/sounds/sad-violin.mp3"
     description: "Sad violin humming"
   - key: "F3"
     sound: "../../assets/sounds/cat-laugh.mp3"
