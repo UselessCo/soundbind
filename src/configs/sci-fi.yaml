@@ -1,0 +1,25 @@
+# Profile information (optional)
+profile:
+  name: "Science Fiction Sounds"
+  description: "Sci-fi keybind configuration"
+
+# Audio configuration
+audio:
+  player: "play"
+  maxConcurrent: 8
+
+keybinds:
+  - key: "1"
+    sound: "../../assets/sounds/light-saber.mp3"
+    description: "Sound effect of a light saber"
+
+# Settings
+settings:
+  hotReload: true
+  preloadSounds: true
+
+# Logging configuration
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
