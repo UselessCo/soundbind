@@ -28,7 +28,7 @@ const checkFileNamingConvention = (filename) => {
   const kebabCasePattern = /^[a-z0-9]+(-[a-z0-9]+)*\.mp3$/;
   return kebabCasePattern.test(filename)
     ? { valid: true }
-    : { valid: false, reason: 'does not match the "KEBAB_CASE" pattern' };
+    : { valid: false, reason: 'does not match the "kebab-case" pattern' };
 };
 
 // Function to check the naming convention for directories
@@ -59,7 +59,7 @@ const lintAssets = (dir) => {
       // Check the folder naming convention
       if (!checkFolderNamingConvention(item)) {
         console.log(
-          `${UNDERLINE}${itemPath}${RESET}\n  ${RED}error${RESET}  The folder name "${item}" does not match the "KEBAB_CASE" pattern\n`
+          `${UNDERLINE}${itemPath}${RESET}\n  ${RED}error${RESET}  The folder name "${item}" does not match the "kebab-case" pattern\n`
         );
         errorCount += 1; // Increment error count for folder issues
       }
