@@ -23,7 +23,7 @@
         "start": "node index.js",
         "dev": "nodemon index.js ./src/configs/default.yaml",
         "postinstall": "node postinstall.js",
-        "lint": "node lint-assets.js && lint-config.js && eslint . && prettier --check \"**/*.{js,json,md,yaml,yml}\"",
+        "lint": "node lint-assets.js && node lint-configs.js && eslint . && prettier --check \"**/*.{js,json,md,yaml,yml}\"",
         "lint:fix": "eslint . --fix",
         "format": "prettier --write \"**/*.{js,json,md,yaml,yml}\"",
         "format:check": "prettier --check \"**/*.{js,json,md,yaml,yml}\"",
