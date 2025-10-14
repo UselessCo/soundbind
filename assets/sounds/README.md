@@ -1,48 +1,21 @@
-# Soundbind Sounds Collection
+# Soundbind Sound Library 🎧
 
-This directory contains community-contributed sound files for Soundbind.
+This folder contains all the available sounds for Soundbind.  
+Each sound can be referenced in configuration files to assign them to specific keybinds or triggers.
 
-## Contributing Sounds
+---
 
-We welcome sound contributions! Please follow these guidelines:
+## Available Sounds
 
-### Requirements
+- **awesome_music** — A short upbeat tune ideal for alerts, success notifications, or celebration effects.
 
-1. **Format**: MP3 only (for Windows compatibility)
-2. **Size**: Keep files under 500KB
-3. **Licensing**: Only submit sounds you have rights to use
-4. **Naming**: Use descriptive, lowercase names with hyphens
+---
 
-### How to Contribute
+### 🛠 How to Add a New Sound
+1. Place your `.mp3` file in this directory (`assets/sounds/`).
+2. Add an entry above describing the sound.
+3. (Optional) Add a keybind reference in one of the configuration files inside `src/configs/`.
 
-1. Fork the repository
-2. Add your sound file to this directory
-3. Update this README with your sound info
-4. Create or update a config in `src/configs/` that uses your sound
-5. Submit a Pull Request
+---
 
-## Usage
-
-Reference sounds in your config files:
-
-```yaml
-keybinds:
-  - key: '1'
-    sound: './node_modules/soundbind/assets/sounds/danca-gatinho.mp3'
-    description: 'Dance cat'
-```
-
-Or if using from source:
-
-```yaml
-keybinds:
-  - key: '1'
-    sound: '../../assets/sounds/danca-gatinho.mp3'
-    description: 'Dance cat'
-```
-
-## License
-
-All sounds are subject to the project's MIT License. By contributing sounds, you agree to the terms in [DISCLAIMER.md](../../DISCLAIMER.md).
-
-Contributors represent that they have the necessary rights to submit their contributions.
+*Contributions are welcome! Feel free to submit your favorite sounds via a pull request.*
