@@ -1,0 +1,21 @@
+profile:
+  name: "maoe-silviosantos"
+  description: "Maoe Silvio Santos config"
+
+audio:
+  player: "play"
+  maxConcurrent: 5
+
+keybinds:
+  - key: "9"
+    sound: "../../assets/sounds/maoe-silviosantos.mp3"
+    description: "A very famous catchphrase from a Brazilian TV presenter."
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
