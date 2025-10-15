@@ -1,0 +1,34 @@
+# nature.yaml
+profile:
+  name: "Nature sounds"
+  description: "Calm and relaxing nature sounds"
+
+audio:
+  player: "play"
+  maxConcurrent: 1
+
+keybinds:
+  - key: "F1"
+    sound: "../../assets/sounds/footsteps-trail.mp3"
+    description: "Clear description"
+  - key: "F2"
+    sound: "../../assets/sounds/light-rain.mp3"
+    description: "Clear description"
+  - key: "F3"
+    sound: "../../assets/sounds/nature-birds.mp3"
+    description: "Clear description"
+  - key: "F4"
+    sound: "../../assets/sounds/nature-forest.mp3"
+    description: "Clear description"
+  - key: "F5"
+    sound: "../../assets/sounds/nature-river.mp3"
+    description: "Clear description"
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
