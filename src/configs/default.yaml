@@ -13,6 +13,10 @@ keybinds:
     sound: "../../assets/sounds/omaewa.mp3"
     description: "Omaewa sound"
 
+  - key: "4"
+    sound: "../../assets/sounds/awesome-music.mp3"
+    description: "Awesome music sound"
+
 audio:
   player: "play"
 
