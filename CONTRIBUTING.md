@@ -106,7 +106,7 @@ npm install
 npm start
 
 # Run with custom config
-npm run dev ./src/configs/your-config.yaml
+`npm run dev ./src/configs/your-config.yaml`
 ```
 
 ### Code Guidelines
