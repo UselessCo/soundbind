@@ -46,3 +46,9 @@ keybinds:
 All sounds are subject to the project's MIT License. By contributing sounds, you agree to the terms in [DISCLAIMER.md](../../DISCLAIMER.md).
 
 Contributors represent that they have the necessary rights to submit their contributions.
+
+```yaml
+keybinds:
+  - key: '5'
+    sound: 'assets\sounds\birds39-forest-20772.mp3'
+    description: 'birds-sound'
