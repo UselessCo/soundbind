@@ -1,0 +1,23 @@
+profile:
+  name: "Funny Car Horn"
+  description: "Hilarious car horn sound effect for pranks, streaming, and fun moments"
+  version: "1.0.0"
+
+audio:
+  player: "play"
+  maxConcurrent: 3
+
+keybinds:
+  - key: "F9"
+    sound: "../../assets/sounds/funny-car-horn.mp3"
+    description: "Funny car horn sound effect"
+    stopOthers: true
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
