@@ -50,5 +50,5 @@ Contributors represent that they have the necessary rights to submit their contr
 ```yaml
 keybinds:
   - key: '5'
-    sound: 'assets\sounds\birds39-forest-20772.mp3'
-    description: 'birds-sound'
+    sound: 'assets\sounds\dog-barking.mp3'
+    description: 'dog-barking'
