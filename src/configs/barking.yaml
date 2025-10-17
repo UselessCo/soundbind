@@ -1,0 +1,21 @@
+profile:
+  name: "Dog Barking Sound"
+  description: "Configuration for dog barking sound"
+
+audio:
+  player: "play"
+  maxConcurrent: 5
+
+keybinds:
+  - key: "5"
+    sound: "../../assets/sounds/dog-barking.mp3"
+    description: "Dog barking sound"
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
