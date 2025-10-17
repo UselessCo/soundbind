@@ -1,0 +1,21 @@
+profile:
+  name: "Healing Magic"
+  description: "A soothing magical chime sound effect — perfect for calm vibes or fantasy themes."
+
+audio:
+  player: "play"
+  maxConcurrent: 3
+
+keybinds:
+  - key: "H"
+    sound: "../../assets/sounds/healing-magic.mp3"
+    description: "Plays the Healing Magic sound effect"
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
