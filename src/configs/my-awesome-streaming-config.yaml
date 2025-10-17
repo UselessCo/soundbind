@@ -1,0 +1,27 @@
+profile:
+  name: "My Awesome Streaming Config"
+  description: "Keybinds for quick streaming sound effects and transitions."
+
+audio:
+  player: "play"
+  maxConcurrent: 6
+
+keybinds:
+  - key: "F1"
+    sound: "../../assets/sounds/intro-jingle.mp3"
+    description: "Stream intro jingle"
+  - key: "F2"
+    sound: "../../assets/sounds/cheer.mp3"
+    description: "Crowd cheer"
+  - key: "F3"
+    sound: "../../assets/sounds/mute-toggle.mp3"
+    description: "Toggle mic sound effect for transitions"
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: false
+  filePath: "logs"
