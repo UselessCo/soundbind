@@ -21,6 +21,10 @@ keybinds:
     sound: "../../assets/sounds/sci-fi-picking-detector.mp3"
     description: "Sound of picking science detector"
 
+  - key: "6"
+    sound: "../../assets/sounds/neighing-horse.mp3"
+    description: "Clean and dry recording of a neighing horse close mic'ed."
+
 audio:
   player: "play"
 
