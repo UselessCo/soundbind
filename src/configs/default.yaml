@@ -17,6 +17,10 @@ keybinds:
     sound: "../../assets/sounds/awesome-music.mp3"
     description: "Awesome music sound"
 
+  - key: "5"
+    sound: "../../assets/sounds/sci-fi-picking-detector.mp3"
+    description: "Sound of picking science detector"
+
 audio:
   player: "play"
 

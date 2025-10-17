@@ -1,0 +1,21 @@
+profile:
+  name: "Sci-fi picking detector"
+  description: "sci-fi-picking-detector-config."
+
+audio:
+  player: "play"
+  maxConcurrent: 5
+
+keybinds:
+  - key: "F1"
+    sound: "../../assets/sounds/sci-fi-picking-detector.mp3"
+    description: "Created some synth sounds and recorded the sound of opening the bag."
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
