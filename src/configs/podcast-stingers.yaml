@@ -1,0 +1,37 @@
+profile:
+  name: "Podcast Stingers Pack"
+  description: "Short jingles and audio cues for podcast intros, transitions, and outros."
+
+audio:
+  player: "play"
+  maxConcurrent: 4
+
+keybinds:
+  - key: "F1"
+    sound: "../../assets/sounds/intro-jingle.mp3"
+    description: "Intro music sting"
+
+  - key: "F2"
+    sound: "../../assets/sounds/transition-tone.mp3"
+    description: "Transition sound effect"
+
+  - key: "F3"
+    sound: "../../assets/sounds/outro-sting.mp3"
+    description: "Outro short music"
+
+  - key: "F4"
+    sound: "../../assets/sounds/chime-soft.mp3"
+    description: "Soft background chime"
+
+  - key: "F5"
+    sound: "../../assets/sounds/break-swish.mp3"
+    description: "Segment break swoosh"
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
