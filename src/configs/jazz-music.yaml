@@ -1,0 +1,31 @@
+profile:
+  name: "Jazz Music"
+  description: "A small set of keybinds for playing short jazz clips and stabs. Uses the bundled `jazz.mp3`."
+
+audio:
+  player: "play"
+  maxConcurrent: 3
+
+keybinds:
+  - key: "F5"
+    sound: "../../assets/sounds/jazz.mp3"
+    description: "Play a short jazz clip"
+
+  - key: "ctrl+F5"
+    sound: "../../assets/sounds/jazz.mp3"
+    loop: true
+    description: "Play jazz loop (toggle with the same key to stop)"
+
+  - key: "shift+F5"
+    sound: "../../assets/sounds/awesome-music.mp3"
+    stopOthers: true
+    description: "One-shot music accent that stops other sounds"
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: false
+  filePath: "logs"
