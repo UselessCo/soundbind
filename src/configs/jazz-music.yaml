@@ -1,0 +1,37 @@
+profile:
+  name: "Jazz Practice"
+  description: "A set of quick-access jazz loops and cues for practice and live performance."
+
+audio:
+  player: "play"
+  maxConcurrent: 4
+
+keybinds:
+  - key: "F5"
+    sound: "../../assets/sounds/jazz.mp3"
+    description: "Start main jazz loop"
+    stopOthers: false
+
+  - key: "F6"
+    sound: "../../assets/sounds/healing-magic.mp3"
+    description: "Ambient pad (use as backing)"
+    stopOthers: false
+
+  - key: "F7"
+    sound: "../../assets/sounds/troll-laugh.mp3"
+    description: "Short accent/percussion cue"
+    stopOthers: true
+
+  - key: "ctrl+F5"
+    sound: "../../assets/sounds/jazz.mp3"
+    description: "Play jazz loop but stop other sounds first"
+    stopOthers: true
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
