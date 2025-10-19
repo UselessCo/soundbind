@@ -16,10 +16,6 @@ Simple example showing how to use included sounds from the package. Perfect for 
 
 Comprehensive template showing all available options and key combinations. Use this as a reference when creating your own configs.
 
-### `podcast-stingers.yaml`
-
-Short jingles and audio cues for podcast intros, transitions, and outros. Good for streamers and podcasters who want quick audio cues bound to keys (F1–F5).
-
 ## Using Configs
 
 ### From Installed Package
