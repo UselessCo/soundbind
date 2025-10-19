@@ -97,10 +97,6 @@ Want to contribute but need inspiration? Here are some ideas:
 - **Work**: Meeting sounds, break reminders
 - **Music**: Drum pads, sound effects
 - **Podcasting**: Intro/outro, transitions
-
-## Added configs
-
-- `jazz-music.yaml` — A small jazz-themed config that binds `F5` to the included `jazz.mp3` clip and provides loop and one-shot variants. Path: `src/configs/jazz-music.yaml`
 - **Presentations**: Applause, transitions
 
 ## Need Help?
