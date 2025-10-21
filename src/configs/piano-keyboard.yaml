@@ -1,0 +1,139 @@
+# Profile information
+profile:
+  name: "Piano Keyboard"
+  description: "Piano keys C3-E5 mapped to keyboard layout"
+
+# Audio configuration
+audio:
+  player: "play"
+  maxConcurrent: 20
+
+# Keybind mappings
+keybinds:
+  # Using sounds from the installed package
+  - key: "z"
+    sound: "../../assets/sounds/piano-keys/piano-c3.mp3"
+    description: "C3"
+
+  - key: "s"
+    sound: "../../assets/sounds/piano-keys/piano-cs3.mp3"
+    description: "C#3"
+
+  - key: "x"
+    sound: "../../assets/sounds/piano-keys/piano-d3.mp3"
+    description: "D3"
+
+  - key: "d"
+    sound: "../../assets/sounds/piano-keys/piano-ds3.mp3"
+    description: "D#3"
+
+  - key: "c"
+    sound: "../../assets/sounds/piano-keys/piano-e3.mp3"
+    description: "E3"
+
+  - key: "v"
+    sound: "../../assets/sounds/piano-keys/piano-f3.mp3"
+    description: "F3"
+
+  - key: "g"
+    sound: "../../assets/sounds/piano-keys/piano-fs3.mp3"
+    description: "F#3"
+
+  - key: "b"
+    sound: "../../assets/sounds/piano-keys/piano-g3.mp3"
+    description: "G3"
+
+  - key: "h"
+    sound: "../../assets/sounds/piano-keys/piano-gs3.mp3"
+    description: "G#3"
+
+  - key: "n"
+    sound: "../../assets/sounds/piano-keys/piano-a3.mp3"
+    description: "A3"
+
+  - key: "j"
+    sound: "../../assets/sounds/piano-keys/piano-as3.mp3"
+    description: "A#3"
+
+  - key: "m"
+    sound: "../../assets/sounds/piano-keys/piano-b3.mp3"
+    description: "B3"
+
+  - key: "q"
+    sound: "../../assets/sounds/piano-keys/piano-c4.mp3"
+    description: "C4"
+
+  - key: "2"
+    sound: "../../assets/sounds/piano-keys/piano-cs4.mp3"
+    description: "C#4"
+
+  - key: "w"
+    sound: "../../assets/sounds/piano-keys/piano-d4.mp3"
+    description: "D4"
+
+  - key: "3"
+    sound: "../../assets/sounds/piano-keys/piano-ds4.mp3"
+    description: "D#4"
+
+  - key: "e"
+    sound: "../../assets/sounds/piano-keys/piano-e4.mp3"
+    description: "E4"
+
+  - key: "r"
+    sound: "../../assets/sounds/piano-keys/piano-f4.mp3"
+    description: "F4"
+
+  - key: "5"
+    sound: "../../assets/sounds/piano-keys/piano-fs4.mp3"
+    description: "F#4"
+
+  - key: "t"
+    sound: "../../assets/sounds/piano-keys/piano-g4.mp3"
+    description: "G4"
+
+  - key: "6"
+    sound: "../../assets/sounds/piano-keys/piano-gs4.mp3"
+    description: "G#4"
+
+  - key: "y"
+    sound: "../../assets/sounds/piano-keys/piano-a4.mp3"
+    description: "A4"
+
+  - key: "7"
+    sound: "../../assets/sounds/piano-keys/piano-as4.mp3"
+    description: "A#4"
+
+  - key: "u"
+    sound: "../../assets/sounds/piano-keys/piano-b4.mp3"
+    description: "B4"
+
+  - key: "i"
+    sound: "../../assets/sounds/piano-keys/piano-c5.mp3"
+    description: "C5"
+
+  - key: "9"
+    sound: "../../assets/sounds/piano-keys/piano-cs5.mp3"
+    description: "C#5"
+
+  - key: "o"
+    sound: "../../assets/sounds/piano-keys/piano-d5.mp3"
+    description: "D5"
+
+  - key: "0"
+    sound: "../../assets/sounds/piano-keys/piano-ds5.mp3"
+    description: "D#5"
+
+  - key: "p"
+    sound: "../../assets/sounds/piano-keys/piano-e5.mp3"
+    description: "E5"
+
+# Settings
+settings:
+  hotReload: true
+  preloadSounds: true
+
+# Logging configuration
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
