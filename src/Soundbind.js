@@ -6,7 +6,6 @@ import SoundbindEngine from './core/SoundbindEngine.js';
 import logger from './common/utils/logger.js';
 import configConstants from './common/constants/config.js';
 import loggingConstants from './common/constants/logging.js';
-import audioConstants from './common/constants/audio.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,7 +14,6 @@ class Soundbind {
   constructor(options = {}) {
     this.options = {
       logLevel: loggingConstants.DEFAULT_LOG_LEVEL,
-      maxConcurrentSounds: audioConstants.DEFAULT_MAX_CONCURRENT_SOUNDS,
       ...options
     };
 

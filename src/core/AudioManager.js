@@ -17,7 +17,7 @@ const __dirname = dirname(__filename);
 class AudioManager {
   constructor(options = {}) {
     this.options = {
-      maxConcurrentSounds: audioConstants.DEFAULT_MAX_CONCURRENT_SOUNDS,
+      maxConcurrent: audioConstants.DEFAULT_MAX_CONCURRENT_SOUNDS,
       ...options
     };
 
@@ -46,6 +46,11 @@ class AudioManager {
       logger.info(`Using play-sound for ${process.platform}`);
     }
 
+    if (audioConfig.maxConcurrent) {
+      this.options.maxConcurrent = audioConfig.maxConcurrent;
+      logger.info(`Max concurrent sounds set to: ${audioConfig.maxConcurrent}`);
+    }
+
     logger.debug('Audio manager initialized');
   }
 
@@ -72,8 +77,9 @@ class AudioManager {
       const soundId = ++this.soundCounter;
 
       // Check concurrent sound limit
-      if (this.activeSounds.size >= this.options.maxConcurrentSounds) {
-        logger.warn('Max concurrent sounds reached');
+      if (this.activeSounds.size >= this.options.maxConcurrent) {
+        reject(new Error(`Max concurrent sounds reached (${this.options.maxConcurrent})`));
+        return;
       }
 
       // Convert to absolute path
@@ -114,24 +120,20 @@ class AudioManager {
     });
   }
 
-  async playWithPlaySound(soundFile, options = {}) {
+  async playWithPlaySound(soundFile, _options = {}) {
     return new Promise((resolve, reject) => {
       // Check concurrent sound limit
-      if (this.activeSounds.size >= this.options.maxConcurrentSounds) {
-        logger.warn('Max concurrent sounds reached');
+      if (this.activeSounds.size >= this.options.maxConcurrent) {
+        reject(new Error(`Max concurrent sounds reached (${this.options.maxConcurrent})`));
+        return;
       }
-
-      // Prepare sound options
-      const soundOptions = {
-        ...options
-      };
 
       // Generate unique sound ID
       const soundId = ++this.soundCounter;
 
       try {
         // Play the sound
-        const player = this.playSound.play(soundFile, soundOptions, (err) => {
+        const player = this.playSound.play(soundFile, (err) => {
           // Remove from active sounds when done
           this.activeSounds.delete(soundId);
 
