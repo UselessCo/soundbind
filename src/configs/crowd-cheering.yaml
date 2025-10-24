@@ -1,0 +1,21 @@
+profile:
+  name: "Crowd Cheering Config"
+  description: "Configuration for playing the crowd cheering sound effect"
+
+audio:
+  player: "play"
+  maxConcurrent: 5
+
+keybinds:
+  - key: "F1"
+    sound: "../../assets/sounds/crowd-cheering.mp3"
+    description: "Plays the crowd cheering sound effect"
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"
