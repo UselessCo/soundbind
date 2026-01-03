@@ -226,11 +226,11 @@ Translations are available at:
 
 ---
 
-## 🎃 Special Events & Newcomer Support
+## 🎉 Newcomer Support
 
 ### Hacktoberfest Welcome
 
-Soundbind is a **Hacktoberfest-friendly project** designed for first-time contributors!
+Soundbind is designed for **first-time contributors**!
 
 **What makes us beginner-friendly:**
 

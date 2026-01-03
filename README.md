@@ -1,4 +1,4 @@
-[![CI/CD](https://github.com/UselessCo/soundbind/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/UselessCo/soundbind/actions/workflows/test.yml) [![npm version](https://badge.fury.io/js/soundbind.svg)](https://www.npmjs.com/package/soundbind) [![npm downloads](https://img.shields.io/npm/dm/soundbind.svg)](https://www.npmjs.com/package/soundbind) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CI/CD](https://github.com/UselessCo/soundbind/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/UselessCo/soundbind/actions/workflows/test.yml) [![npm version](https://badge.fury.io/js/soundbind.svg)](https://www.npmjs.com/package/soundbind) [![npm downloads](https://img.shields.io/npm/dt/soundbind.svg)](https://www.npmjs.com/package/soundbind) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 # Soundbind
 
@@ -7,8 +7,6 @@ A lightweight, cross-platform keybind-based soundboard system built with Node.js
 > 🎵 **Community-Driven**: Contribute your sounds and configurations! Help build the ultimate soundboard collection.
 
 ---
-
-## 🎃 Hacktoberfest Welcome! Perfect for First-Time Contributors
 
 **Looking for an easy first contribution?** You're in the right place! This project was specifically designed to welcome beginners and provide a meaningful contribution experience.
 
@@ -256,4 +254,14 @@ This is an open-source project. Sound files and configurations are community-con
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+**MIT License** - see [LICENSE](LICENSE) for details.
+
+---
+
+## 🙏 Thanks to all contributors
+
+A big thank you to everyone who has contributed! Your contributions keep Soundbind alive and improving.
+
+<a href="https://github.com/UselessCo/soundbind/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=UselessCo/soundbind" />
+</a>
