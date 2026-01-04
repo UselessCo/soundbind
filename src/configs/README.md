@@ -2,17 +2,11 @@
 
 This directory contains pre-made configuration files for Soundbind.
 
-## Available Configs
+## Basic Configs
 
 ### `default.yaml`
 
 Basic configuration with example sounds. Good starting point for new users.
-
-**Keys:**
-
-- `1` - Danca gatinho sound
-- `2` - Oloquinho sound
-- `3` - Omaewa sound
 
 ### `soundbind.example.yaml`
 

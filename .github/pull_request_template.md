@@ -28,7 +28,6 @@ Closes #(issue number)
 - [ ] Sound is in MP3 format
 - [ ] File size is under 500KB
 - [ ] Added sound to `assets/sounds/`
-- [ ] Updated `assets/sounds/README.md`
 - [ ] Created/updated config that uses the sound
 
 ## For Code Changes

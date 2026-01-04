@@ -11,8 +11,6 @@
 
 # Denote binary files
 *.mp3 binary
-*.ogg binary
-*.wav binary
 *.tgz binary
 
 # Windows-specific files

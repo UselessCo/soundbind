@@ -13,6 +13,18 @@ keybinds:
     sound: "../../assets/sounds/omaewa.mp3"
     description: "Omaewa sound"
 
+  - key: "4"
+    sound: "../../assets/sounds/awesome-music.mp3"
+    description: "Awesome music sound"
+
+  - key: "5"
+    sound: "../../assets/sounds/sci-fi-picking-detector.mp3"
+    description: "Sound of picking science detector"
+
+  - key: "6"
+    sound: "../../assets/sounds/neighing-horse.mp3"
+    description: "Clean and dry recording of a neighing horse close mic'ed."
+
 audio:
   player: "play"
 

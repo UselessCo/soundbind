@@ -1,0 +1,24 @@
+profile:
+  name: "Among Us Sound"
+  description: "Sound effect of Among Us roles reveal"
+
+audio:
+  player: "play"
+  maxConcurrent: 5
+
+keybinds:
+  - key: "4"
+    sound: "../../assets/sounds/among-us.mp3"
+    description: "Suspenseful sound effect from Among Us"
+  - key: "5"
+    sound: "../../assets/sounds/armadillo-ok.mp3"
+    description: "Apathetic reaction to the imposter"
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"

@@ -1,0 +1,21 @@
+profile:
+  name: "Fire Alarm Sound"
+  description: "Loud fire alarm alert sound for emergencies"
+
+audio:
+  player: "play"
+  maxConcurrent: 5
+
+keybinds:
+  - key: "F1"
+    sound: "../../assets/sounds/fire-alarm.mp3"
+    description: "Fire alarm alert sound"
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"

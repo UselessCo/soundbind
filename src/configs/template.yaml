@@ -32,84 +32,84 @@ keybinds:
   # FUNCTION KEYS
   # -------------------------------------------------------------------------
   - key: "F1"
-    sound: "./assets/sounds/victory.mp3"
+    sound: "../../assets/sounds/victory.mp3"
     description: "Victory sound"
 
   - key: "F2"
-    sound: "./assets/sounds/explosion.wav"
+    sound: "../../assets/sounds/explosion.mp3"
     description: "Explosion effect"
 
   - key: "F3"
-    sound: "./assets/sounds/laser.wav"
+    sound: "../../assets/sounds/laser.mp3"
     description: "Laser blast"
 
   - key: "F4"
-    sound: "./assets/sounds/notification.ogg"
+    sound: "../../assets/sounds/notification.mp3"
     description: "Alert notification"
 
   - key: "F5"
-    sound: "./assets/sounds/epic-theme.mp3"
+    sound: "../../assets/sounds/epic-theme.mp3"
     stopOthers: true # Stop other sounds first
     description: "Epic background music"
 
   - key: "F6"
-    sound: "./assets/sounds/ambience.wav"
+    sound: "../../assets/sounds/ambience.mp3"
     description: "Background ambience"
 
   # -------------------------------------------------------------------------
   # NUMPAD KEYS
   # -------------------------------------------------------------------------
   - key: "numpad1"
-    sound: "./assets/sounds/coin.wav"
+    sound: "../../assets/sounds/coin.mp3"
     description: "Coin pickup"
 
   - key: "numpad2"
-    sound: "./assets/sounds/power-up.wav"
+    sound: "../../assets/sounds/power-up.mp3"
     description: "Power up sound"
 
   - key: "numpad3"
-    sound: "./assets/sounds/jump.wav"
+    sound: "../../assets/sounds/jump.mp3"
     description: "Jump sound"
 
   # -------------------------------------------------------------------------
   # LETTER KEYS
   # -------------------------------------------------------------------------
   - key: "q"
-    sound: "./assets/sounds/quick-beep.wav"
+    sound: "../../assets/sounds/quick-beep.mp3"
     description: "Quick beep"
 
   - key: "w"
-    sound: "./assets/sounds/weapon.wav"
+    sound: "../../assets/sounds/weapon.mp3"
     description: "Weapon sound"
 
   # -------------------------------------------------------------------------
   # MODIFIER COMBINATIONS - CTRL
   # -------------------------------------------------------------------------
   - key: "ctrl+F1"
-    sound: "./assets/sounds/airhorn.mp3"
+    sound: "../../assets/sounds/airhorn.mp3"
     stopOthers: true
     description: "Airhorn blast"
 
   - key: "ctrl+F2"
-    sound: "./assets/sounds/dramatic.wav"
+    sound: "../../assets/sounds/dramatic.mp3"
     description: "Dramatic effect"
 
   # -------------------------------------------------------------------------
   # MODIFIER COMBINATIONS - SHIFT
   # -------------------------------------------------------------------------
   - key: "shift+F1"
-    sound: "./assets/sounds/wow.mp3"
+    sound: "../../assets/sounds/wow.mp3"
     description: "Wow exclamation"
 
   - key: "shift+space"
-    sound: "./assets/sounds/build-up.mp3"
+    sound: "../../assets/sounds/build-up.mp3"
     description: "Music build-up"
 
   # -------------------------------------------------------------------------
   # COMPLEX COMBINATIONS
   # -------------------------------------------------------------------------
   - key: "ctrl+shift+F1"
-    sound: "./assets/sounds/emergency.wav"
+    sound: "../../assets/sounds/emergency.mp3"
     stopOthers: true
     description: "Emergency alert"
 
@@ -117,15 +117,15 @@ keybinds:
   # SPECIAL KEYS
   # -------------------------------------------------------------------------
   - key: "space"
-    sound: "./assets/sounds/kick-drum.wav"
+    sound: "../../assets/sounds/kick-drum.mp3"
     description: "Kick drum"
 
   - key: "enter"
-    sound: "./assets/sounds/confirm.wav"
+    sound: "../../assets/sounds/confirm.mp3"
     description: "Confirm action"
 
   - key: "escape"
-    sound: "./assets/sounds/cancel.wav"
+    sound: "../../assets/sounds/cancel.mp3"
     stopOthers: true # Good for stopping all sounds
     description: "Cancel/Stop all"
 

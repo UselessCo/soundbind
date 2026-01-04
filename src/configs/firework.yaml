@@ -1,0 +1,21 @@
+profile:
+  name: "Firework Sound"
+  description: "Firework sound for celebrations"
+
+audio:
+  player: "play"
+  maxConcurrent: 5
+
+keybinds:
+  - key: "F1"
+    sound: "../../assets/sounds/firework.mp3"
+    description: "Firework sound effect"
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: true
+  filePath: "logs"

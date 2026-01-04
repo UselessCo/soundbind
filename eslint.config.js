@@ -39,7 +39,6 @@ export default [
         'error',
         {
           'src/common/**/*.js': 'CAMEL_CASE',
-          'src/configs/**/*.yaml': 'KEBAB_CASE',
           'src/core/**/*.js': 'PASCAL_CASE'
         }
       ],
