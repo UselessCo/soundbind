@@ -1,0 +1,47 @@
+profile:
+  name: "Countdown"
+  description: "Simple countdown config: keybinds for 5→0 with an end alarm. Place short numbered beep files in ../../assets/sounds/"
+
+audio:
+  # player choice: keep consistent with other configs (e.g. 'play')
+  player: "play"
+  maxConcurrent: 1
+
+keybinds:
+  # Map function keys to countdown sounds (5 -> 0)
+  - key: "F5"
+    sound: "../../assets/sounds/countdown-5.mp3"
+    description: "Countdown: 5"
+
+  - key: "F6"
+    sound: "../../assets/sounds/countdown-4.mp3"
+    description: "Countdown: 4"
+
+  - key: "F7"
+    sound: "../../assets/sounds/countdown-3.mp3"
+    description: "Countdown: 3"
+
+  - key: "F8"
+    sound: "../../assets/sounds/countdown-2.mp3"
+    description: "Countdown: 2"
+
+  - key: "F9"
+    sound: "../../assets/sounds/countdown-1.mp3"
+    description: "Countdown: 1"
+
+  - key: "F10"
+    sound: "../../assets/sounds/countdown-0.mp3"
+    description: "Countdown: 0 (alarm)"
+    stopOthers: true
+
+settings:
+  hotReload: true
+  preloadSounds: true
+
+logging:
+  level: "info"
+  fileEnabled: false
+# Notes:
+# - Add short beep or spoken-number files named countdown-5.mp3 ... countdown-0.mp3
+#   under `assets/sounds/` (use relative path ../../assets/sounds/ as above).
+# - Keep those files small to satisfy repository asset limits (see lint-assets.js).
